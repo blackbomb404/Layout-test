@@ -1,0 +1,25 @@
+<article class="lifestyle-new">
+  <img
+    [src]="thumbnailPath"
+    alt=""
+    class="lifestyle-new-thumbnail"
+  />
+  <div class="lifestyle-new-content">
+    <h4 class="lifestyle-new-content-title">
+      <a routerLink="/news">{{title}}</a>
+    </h4>
+    <app-publishing-details
+        [type]="'lifestyle'"
+        [authorPhotoPath]="publishingDetails.authorPhotoPath"
+        [authorName]="publishingDetails.authorName"
+        [since]="publishingDetails.since"
+        viewsIconPath="assets/icons/views-metal.png"
+        [views]="publishingDetails.views"
+        commentsIconPath="assets/icons/comments-metal.png"
+        [comments]="publishingDetails.comments">
+    </app-publishing-details>
+    <p class="lifestyle-new-content-body">
+      {{contentBody}}
+    </p>
+  </div>
+</article>

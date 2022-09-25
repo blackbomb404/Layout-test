@@ -1,0 +1,40 @@
+@use '/src/assets/styles/colors' as c;
+
+.music-new {
+  display: flex;
+  column-gap: 24px;
+  // width: 80%;
+
+  .music-new-thumbnail {
+    width: 187px;
+    height: 151px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+  }
+
+  .music-new-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    color: rgba(0, 0, 0, .6);
+
+    .music-new-content-title {
+      font-weight: 600;
+      // margin-bottom: 16px;
+
+      a {
+        color: #010408;
+        text-decoration: none;
+
+        &:hover {
+          color: c.$gold-text;
+        }
+      }
+
+
+    }
+  }
+
+}

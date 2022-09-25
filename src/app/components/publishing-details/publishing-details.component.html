@@ -1,0 +1,19 @@
+<section class="publishing-details">
+  <img class="author-photo"
+  [class.gold]="type === 'music'"
+  [class.metal]="type === 'entertainment'"
+  [class.apple]="type === 'lifestyle'"
+  [src]="authorPhotoPath" alt="">
+  <span class="author-name">{{authorName}}</span>
+  <span class="since">{{since}}</span>
+
+  <div class="views">
+    <img [src]="viewsIconPath" alt="">
+    <span>{{views}}</span>
+  </div>
+
+  <div class="comments">
+    <img [src]="commentsIconPath" alt="">
+    <span>{{comments}}</span>
+  </div>
+</section>

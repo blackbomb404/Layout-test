@@ -1,0 +1,206 @@
+<div class="news-wrapper">
+  <div class="slider">
+    <article class="news">
+      <img
+        class="news-thumbnail"
+        src="assets/images/gilmario.jpg"
+        alt="gilmario_vemba"
+      />
+      <div class="abs">
+        <h2 class="news-title">
+          Popularidade de Gilmário dispara em Portugal: Artista angolano chega
+          ao FOX Comedy
+        </h2>
+        <div class="flex">
+          <div class="tag">#entretenimento</div>
+          <div class="author">
+            <img
+              class="author-avatar"
+              src="assets/images/smilling-1.jpg"
+              alt=""
+            />
+            <span class="author-name">@mariano_fonseca</span>
+          </div>
+          <div class="time">
+            <img class="clock-icon" src="assets/icons/clock.png" alt="" />
+            <span class="time-text">Agosto 18, 2022</span>
+          </div>
+        </div>
+
+        <button class="read-news green-button">
+          Ler notícia
+          <img class="export-icon" src="assets/icons/export.png" alt="" />
+        </button>
+      </div>
+
+      <div class="dark-overlay"></div>
+    </article>
+  </div>
+
+  <section class="more-news">
+    <ng-container *ngFor="let singleNews of news; last as lastItem">
+      <div class="single-news">
+        <img
+          class="single-news-thumbnail"
+          [src]="singleNews.imagePath"
+          alt=""
+        />
+        <div class="single-news-text">
+          <h5 class="single-news-title">{{ singleNews.title }}</h5>
+          <div class="single-news-details">
+            <span class="single-news-author">{{ singleNews.author }}</span>
+            <span class="single-news-time">
+              <img
+                class="black-clock-icon"
+                src="assets/icons/black-clock.png"
+                alt=""
+              />
+              <span class="time-text">{{ singleNews.postDate }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <hr style="margin: 18px 0; background-color: red" *ngIf="!lastItem" />
+    </ng-container>
+    <a class="next-link" routerLink="">Próximo</a>
+  </section>
+</div>
+
+<section class="top-news">
+  <div class="top-news-title">
+    <img
+      class="top-news-title-icon"
+      src="assets/icons/noticias-em-destaque.png"
+      alt=""
+    />
+    <h2 class="top-news-title-text">Notícias em destaque</h2>
+  </div>
+
+  <section class="top-news-slideshow">
+    <article *ngFor="let topNew of topNews" class="top-new">
+      <img class="top-new-thumbnail" [src]="topNew.imagePath" />
+      <div class="top-new-details">
+        <div class="top-new-title">{{ topNew.title }}</div>
+
+        <div class="top-new-postDate">
+          <img
+            class="black-clock-icon"
+            src="assets/icons/black-clock.png"
+            alt=""
+          />
+          <span>{{ topNew.postDate }}</span>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
+
+<article class="advertisement-wrapper">
+  <p class="advertisement-label">Publicidade</p>
+  <div class="advertisement">
+    <div class="advertisement-content">
+      <h2 class="advertisement-content-title">
+        As melhores experiências somente no Radar Kianda
+      </h2>
+      <button class="advertisement-cta">Ir para linha de contacto</button>
+    </div>
+  </div>
+</article>
+
+<section class="music-news">
+  <h1 class="music-news-title">
+    <img
+      src="assets/icons/music.png"
+      alt="music-icon"
+      class="music-news-title-icon"
+    />
+    <span class="music-news-title-text">MÚSICA</span>
+  </h1>
+  <section class="floating-options">
+    <div class="see">
+      <span>Visualizar</span>
+      <div class="options">
+
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 9V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15" stroke="#010408" stroke-linecap="round"/>
+          <path d="M3 9V18C3 18.9428 3 19.4142 3.29289 19.7071C3.58579 20 4.05719 20 5 20H9" stroke="#010408" stroke-linecap="round"/>
+          <path d="M15 20H9" stroke="#010408" stroke-linecap="round"/>
+          <path d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z" stroke="#010408" stroke-linecap="round"/>
+          <path d="M3 15H21" stroke="#010408" stroke-linecap="round"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 9H21V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15V9Z" stroke="#010408" stroke-opacity="0.4" stroke-linecap="round"/>
+          <path d="M3 9H9V20H5C4.05719 20 3.58579 20 3.29289 19.7071C3 19.4142 3 18.9428 3 18V9Z" stroke="#010408" stroke-opacity="0.4" stroke-linecap="round"/>
+          <rect x="9" y="9" width="6" height="11" stroke="#999B9C" stroke-linecap="round"/>
+          <path d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z" stroke="#999B9C" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <a routerLink="/news" class="see-all">Ver todas</a>
+  </section>
+  <div class="music-news-list">
+    <ng-container *ngFor="let musicNew of musicNews">
+
+      <app-music-news
+        [thumbnailPath]="musicNew.thumbnailPath"
+        [title]="musicNew.title"
+        [publishingDetails]="musicNew.publishingDetails"
+        [contentBody]="musicNew.contentBody">
+      </app-music-news>
+
+    </ng-container>
+  </div>
+</section>
+
+<section class="entertainment-news">
+  <h1 class="entertainment-news-title">
+    <img
+      src="assets/icons/entertainment.png"
+      alt="entertainment-icon"
+      class="entertainment-news-title-icon"
+    />
+    <span class="entertainment-news-title-text">ENTRETENIMENTO</span>
+  </h1>
+  <section class="floating-options">
+    <a routerLink="/news" class="see-all">Ver todas</a>
+  </section>
+  <div class="entertainment-news-list">
+    <ng-container *ngFor="let entertainmentNew of entertainmentNews">
+
+      <app-entertainment-news
+        [thumbnailPath]="entertainmentNew.thumbnailPath"
+        [title]="entertainmentNew.title"
+        [publishingDetails]="entertainmentNew.publishingDetails"
+        [contentBody]="entertainmentNew.contentBody">
+      </app-entertainment-news>
+
+    </ng-container>
+  </div>
+</section>
+
+<section class="lifestyle-news">
+  <h1 class="lifestyle-news-title">
+    <img
+      src="assets/icons/lifestyle.png"
+      alt="lifestyle-icon"
+      class="lifestyle-news-title-icon"
+    />
+    <span class="lifestyle-news-title-text">LIFESTYLE</span>
+  </h1>
+  <section class="floating-options">
+    <a routerLink="/news" class="see-all">Ver todas</a>
+  </section>
+  <div class="lifestyle-news-list">
+    <ng-container *ngFor="let lifestyleNew of lifestyleNews">
+
+      <app-lifestyle-news
+        [thumbnailPath]="lifestyleNew.thumbnailPath"
+        [title]="lifestyleNew.title"
+        [publishingDetails]="lifestyleNew.publishingDetails"
+        [contentBody]="lifestyleNew.contentBody">
+      </app-lifestyle-news>
+
+    </ng-container>
+  </div>
+</section>
+

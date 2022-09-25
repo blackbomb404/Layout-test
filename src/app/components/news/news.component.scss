@@ -1,0 +1,442 @@
+@use "/src/assets/styles/colors" as c;
+
+$sections-margin: 100px;
+
+.news-wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 86px;
+  margin: 0 60px;
+
+  .slider {
+    width: 100%;
+    max-width: 850px;
+    max-height: 750px;
+    border-radius: 7px;
+    overflow: hidden;
+
+    .news {
+      position: relative;
+      height: 100%;
+      color: #fff;
+
+      .news-thumbnail {
+        width: 100%;
+      }
+      .abs {
+        position: absolute;
+        top: 40%;
+        left: 8%;
+        right: 8%;
+        z-index: 1;
+
+        $vertical-spacing: 24px;
+
+        .news-title {
+          font-size: 2rem;
+          color: #fff;
+          margin-bottom: $vertical-spacing;
+        }
+
+        .flex {
+          display: flex;
+          align-items: center;
+          column-gap: 24px;
+        }
+
+        .tag {
+          color: c.$green;
+          background-color: #fff;
+          background-color: transparentize(c.$green, 0.7);
+          display: inline-block;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-weight: 600;
+        }
+
+        .flex {
+          margin-bottom: 40px;
+        }
+        .author-avatar {
+          $size: 28px;
+          width: $size;
+          height: $size;
+          border-radius: 50%;
+          object-fit: cover;
+          vertical-align: middle;
+          border: 2px solid #fff;
+          margin-right: 6px;
+        }
+
+        .clock-icon {
+          vertical-align: middle;
+          margin-right: 6px;
+        }
+
+        .green-button {
+          background-color: c.$green;
+          color: #fff;
+          padding: 16px 28px;
+          border-radius: 7px;
+          border: none;
+          font-family: inherit;
+          font-size: 1.05rem;
+          cursor: pointer;
+          transition: background-color 0.25s ease-out;
+
+          &:hover {
+            background-color: darken(c.$green, 5);
+          }
+
+          .export-icon {
+            vertical-align: sub;
+            margin-left: 8px;
+          }
+        }
+      }
+
+      .dark-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, #000 -20%, rgba(0, 0, 0, 0.1) 120%);
+      }
+    }
+  }
+
+  .more-news {
+    width: 500px;
+    // min-height: 700px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+    // background-color: goldenrod;
+    border-radius: 7px;
+    padding: 20px;
+    position: relative;
+
+    .next-link {
+      color: rgba(0, 0, 0, 0.4);
+      text-decoration: none;
+      position: absolute;
+      bottom: 33.5px;
+      right: 56px;
+      font-weight: 500;
+    }
+
+    .single-news {
+      display: flex;
+
+      .single-news-thumbnail {
+        width: 100px;
+        height: 90px;
+        border-radius: 4px;
+        margin-right: 16px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .single-news-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .single-news-title {
+          font-size: 1rem;
+        }
+      }
+
+      .single-news-author {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .single-news-details {
+        display: flex;
+        column-gap: 16px;
+      }
+
+      .single-news-time {
+        font-weight: 300;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // ######### END OF .news-wrapper
+}
+
+.black-clock-icon {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.top-news {
+  margin: $sections-margin 0;
+
+  .top-news-title {
+    margin: 0 0 48px 60px;
+
+    .top-news-title-icon {
+      vertical-align: sub;
+    }
+
+    .top-news-title-text {
+      font-weight: 800;
+      display: inline-block;
+      margin-left: 16px;
+      font-size: 1.85rem;
+    }
+  }
+
+  .top-news-slideshow {
+    display: flex;
+    column-gap: 40px;
+    overflow-x: auto;
+    padding-bottom: 24px;
+
+    & > * {
+      flex-shrink: 0;
+    }
+
+    .top-new {
+      width: 30%;
+      max-width: 460px;
+
+      .top-new-thumbnail {
+        margin-bottom: 4px;
+        width: 100%;
+      }
+
+      .top-new-details {
+        display: flex;
+        justify-content: space-between;
+
+        .top-new-title {
+          font-size: 0.9rem;
+          font-weight: 400;
+          width: 60%;
+        }
+
+        .top-new-postDate {
+          font-size: 0.8rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+.advertisement-wrapper {
+  margin: $sections-margin 0;
+
+  .advertisement-label {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .advertisement-label {
+    margin-bottom: 8px;
+  }
+
+  .advertisement {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 30%, transparent),
+      url(../../../assets/images/advertisement.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    max-width: 1300px;
+    height: 275px;
+    margin: 0 auto;
+    position: relative;
+
+    .advertisement-content {
+      position: absolute;
+      top: 20%;
+      left: 2%;
+
+      .advertisement-content-title {
+        color: #fff;
+        font-weight: 500;
+        width: 80%;
+        margin-bottom: 32px;
+      }
+
+      .advertisement-cta {
+        $cta: #fa6c21;
+        border: none;
+        border-radius: 7px;
+        padding: 14px 20px;
+        background-color: $cta;
+        color: #fff;
+        font-family: inherit;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: darken($cta, 10);
+        }
+      }
+    }
+  }
+}
+
+@mixin news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 32px;
+
+  app-music-news,
+  app-entertainment-news,
+  app-lifestyle-news {
+    width: 47%;
+  }
+}
+
+@mixin shared {
+  margin: 164px 60px $sections-margin;
+}
+
+.music-news {
+  @include shared();
+  position: relative;
+
+  .floating-options {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    padding: 24px;
+    border-radius: 7px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .see {
+      display: flex;
+      column-gap: 16px;
+
+      span {
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      .options {
+        display: inline-block;
+
+        & > :first-child {
+          margin-right: 8px;
+        }
+      }
+    }
+    .see-all {
+      color: c.$gold-text;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .music-news-title {
+    margin-bottom: 64px;
+
+    .music-news-title-icon {
+      vertical-align: text-top;
+    }
+
+    .music-news-title-text {
+      color: c.$gold-text;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: 16px;
+    }
+  }
+
+  .music-news-list {
+    @include news-list();
+  }
+}
+
+.entertainment-news {
+  @include shared();
+  position: relative;
+
+  .floating-options {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    padding: 24px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .see-all {
+      color: c.$metal;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .entertainment-news-title {
+    margin-bottom: 64px;
+
+    .entertainment-news-title-icon {
+      vertical-align: text-top;
+    }
+
+    .entertainment-news-title-text {
+      color: c.$metal;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: 16px;
+    }
+  }
+
+  .entertainment-news-list {
+    @include news-list();
+  }
+}
+
+
+.lifestyle-news {
+  @include shared();
+  position: relative;
+
+  .floating-options {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    padding: 24px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .see-all {
+      color: c.$apple;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .lifestyle-news-title {
+    margin-bottom: 64px;
+
+    .lifestyle-news-title-icon {
+      vertical-align: text-top;
+    }
+
+    .lifestyle-news-title-text {
+      color: c.$apple;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: 16px;
+    }
+  }
+
+  .lifestyle-news-list {
+    @include news-list();
+  }
+}

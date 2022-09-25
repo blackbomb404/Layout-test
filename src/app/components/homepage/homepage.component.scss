@@ -1,0 +1,65 @@
+@use '../../../assets/styles/colors' as c;
+
+header {
+  font-weight: 600;
+
+  .top-image-background {
+    background: url(../../../assets/images/top-image-background.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 250px;
+    position: relative;
+    overflow-y: hidden;
+
+    .top-image-woman {
+      width: 360px;
+      margin-left: 12%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  nav {
+    padding: 28px 60px;
+    display: flex;
+    align-items: center;
+    column-gap: 125.39px;
+    box-shadow: 20px 20px 80px -10px rgba(0, 0, 0, .05);
+
+    .radar {
+      width: 128px;
+    }
+
+
+    ul {
+
+      $black: #010408;
+
+      display: flex;
+      align-items: center;
+      column-gap: 57px;
+
+      li {
+        display: inline;
+
+        a {
+          color: $black;
+          text-decoration: none;
+
+          &.current-active {
+            color: c.$green;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
+
+main {
+  padding: 33px 0;
+}
+

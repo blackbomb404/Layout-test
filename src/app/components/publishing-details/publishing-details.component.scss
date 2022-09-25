@@ -1,0 +1,58 @@
+@use '/src/assets/styles/colors' as c;
+
+.publishing-details {
+
+  .author-photo {
+    $size: 22px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 2px solid c.$gold-text;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: text-bottom;
+  }
+
+  .author-name {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+
+  .since {
+    font-weight: 300;
+    color: rgba(0, 0, 0, .5)
+  }
+
+  %views-comments {
+    display: inline-block;
+
+    & > img {
+      vertical-align: middle;
+    }
+
+    & > span {
+      margin-left: 4px;
+    }
+  }
+
+  .views {
+    @extend %views-comments;
+    margin-left: 24px;
+  }
+  .comments {
+    @extend %views-comments;
+    margin-left: 16px;
+  }
+
+  .gold {
+    border-color: c.$gold-text;
+  }
+  .metal {
+    border-color: c.$metal;
+  }
+  .apple {
+    border-color: c.$apple;
+  }
+}
+

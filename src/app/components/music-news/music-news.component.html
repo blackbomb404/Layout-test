@@ -1,0 +1,25 @@
+<article class="music-new">
+  <img
+    [src]="thumbnailPath"
+    alt=""
+    class="music-new-thumbnail"
+  />
+  <div class="music-new-content">
+    <h4 class="music-new-content-title">
+      <a routerLink="/news">{{title}}</a>
+    </h4>
+    <app-publishing-details
+        [type]="'music'"
+        [authorPhotoPath]="publishingDetails.authorPhotoPath"
+        [authorName]="publishingDetails.authorName"
+        [since]="publishingDetails.since"
+        viewsIconPath="assets/icons/views.png"
+        [views]="publishingDetails.views"
+        commentsIconPath="assets/icons/comments.png"
+        [comments]="publishingDetails.comments">
+    </app-publishing-details>
+    <p class="music-new-content-body">
+      {{contentBody}}
+    </p>
+  </div>
+</article>
