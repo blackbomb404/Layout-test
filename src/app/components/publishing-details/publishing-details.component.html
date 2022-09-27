@@ -1,19 +1,37 @@
 <section class="publishing-details">
-  <img class="author-photo"
+
+  <img class="author-photo" *ngIf="authorPhotoPath"
   [class.gold]="type === 'music'"
   [class.metal]="type === 'entertainment'"
   [class.apple]="type === 'lifestyle'"
+  [class.blue]="type === 'marks'"
+  [class.orange]="type === 'opinion'"
   [src]="authorPhotoPath" alt="">
+
   <span class="author-name">{{authorName}}</span>
-  <span class="since">{{since}}</span>
+  <span class="since"
+  [class.dark]="sinceTextColor === 'dark'"
+  [class.light]="sinceTextColor === 'light'"
+  >{{since}}</span>
 
-  <div class="views">
-    <img [src]="viewsIconPath" alt="">
-    <span>{{views}}</span>
-  </div>
+  <!-- <ng-container *ngIf="showViewsAndComments"> -->
+    <div class="views" *ngIf="views">
+      <img [src]="viewsIconPath" alt="">
+      <span>{{views}}</span>
+    </div>
 
-  <div class="comments">
-    <img [src]="commentsIconPath" alt="">
-    <span>{{comments}}</span>
+    <div class="comments" *ngIf="comments">
+      <img [src]="commentsIconPath" alt="">
+      <span>{{comments}}</span>
+    </div>
+  <!-- </ng-container> -->
+
+  <div class="post-date" *ngIf="postDate">
+    <img
+      class="black-clock-icon"
+      src="assets/icons/black-clock.png"
+      alt=""
+    />
+    <span class="time-text">{{ postDate }}</span>
   </div>
 </section>

@@ -12,53 +12,53 @@ export class NewsComponent implements OnInit {
     {
       title: 'ANPG e parceiros do bloco 48 investem USD 1.4 milhões em projectos socias',
       author: 'Mariano Fonseca',
-      postDate: 'há 10 minutos',
-      imagePath: 'assets/images/javacoding.jpg'
+      since: ' - há 10 minutos',
+      imagePath: 'assets/images/colored-roses.png'
     },
     {
-      title: 'Android Lite was released and users go crazy about it',
+      title: 'Em Agosto os filmes de acção são no canal Mundo FOX',
       author: 'Mariano Fonseca',
-      postDate: 'há 40 minutos',
-      imagePath: 'assets/images/images (2).jpg'
+      since: ' - há 40 minutos',
+      imagePath: 'assets/images/silver-house.png'
     },
     {
-      title: 'Android Lite was released and users go crazy about it',
+      title: 'Fidelidade Angola lança o primeiro seguro automóvel 100% online',
       author: 'Mariano Fonseca',
-      postDate: 'há 40 minutos',
-      imagePath: 'assets/images/images (2).jpg'
+      since: ' - há 13 minutos',
+      imagePath: 'assets/images/rainbow-wall.png'
     },
     {
-      title: 'Android Lite was released and users go crazy about it',
+      title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
       author: 'Mariano Fonseca',
-      postDate: 'há 40 minutos',
-      imagePath: 'assets/images/images (2).jpg'
+      since: ' - há 17 horas',
+      imagePath: 'assets/images/white-car.png'
     },
     {
-      title: 'Android Lite was released and users go crazy about it',
+      title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
       author: 'Mariano Fonseca',
-      postDate: 'há 40 minutos',
-      imagePath: 'assets/images/images (2).jpg'
+      since: ' - há 5 horas',
+      imagePath: 'assets/images/white-car.png'
     }
   ]
   topNews: INews[] = [
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      postDate: 'há 10 minutos',
+      since: 'há 10 minutos',
       imagePath: 'assets/images/top-new1.png'
     },
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      postDate: 'há 10 minutos',
+      since: 'há 10 minutos',
       imagePath: 'assets/images/top-new2.png'
     },
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      postDate: 'há 10 minutos',
+      since: 'há 10 minutos',
       imagePath: 'assets/images/top-new3.png'
     },
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      postDate: 'há 10 minutos',
+      since: 'há 10 minutos',
       imagePath: 'assets/images/top-new4.png'
     }
   ]
@@ -309,6 +309,71 @@ export class NewsComponent implements OnInit {
     }
   ]
 
+  marks: IMusicNews[] = [
+    {
+      thumbnailPath: 'assets/images/sexy-blonde-woman.png',
+      title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    },
+    {
+      thumbnailPath: 'assets/images/jumping-on-road-guy.png',
+      title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    },
+    {
+      thumbnailPath: 'assets/images/yellow-clothes-girl.png',
+      title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    }
+  ]
+
+  opinions: IMusicNews[] = [
+    {
+      thumbnailPath: 'assets/images/sexy-blonde-woman.png',
+      title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    },
+    {
+      thumbnailPath: 'assets/images/jumping-on-road-guy.png',
+      title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    },
+    {
+      thumbnailPath: 'assets/images/yellow-clothes-girl.png',
+      title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
+      publishingDetails: {
+        authorPhotoPath: 'assets/images/smilling-1.jpg',
+        authorName: '@mariano_fonseca',
+        postDate: 'Agosto 18, 2022'
+      },
+      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+    }
+  ]
 
   constructor() { }
 

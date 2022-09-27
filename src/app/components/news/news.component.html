@@ -13,18 +13,13 @@
         </h2>
         <div class="flex">
           <div class="tag">#entretenimento</div>
-          <div class="author">
-            <img
-              class="author-avatar"
-              src="assets/images/smilling-1.jpg"
-              alt=""
-            />
-            <span class="author-name">@mariano_fonseca</span>
-          </div>
-          <div class="time">
-            <img class="clock-icon" src="assets/icons/clock.png" alt="" />
-            <span class="time-text">Agosto 18, 2022</span>
-          </div>
+
+          <app-publishing-details
+          authorPhotoPath="assets/images/smilling-1.jpg"
+          authorName="@mariano_fonseca"
+          since=" - há 5 dias"
+          sinceTextColor="light"
+          ></app-publishing-details>
         </div>
 
         <button class="read-news green-button">
@@ -47,20 +42,14 @@
         />
         <div class="single-news-text">
           <h5 class="single-news-title">{{ singleNews.title }}</h5>
-          <div class="single-news-details">
-            <span class="single-news-author">{{ singleNews.author }}</span>
-            <span class="single-news-time">
-              <img
-                class="black-clock-icon"
-                src="assets/icons/black-clock.png"
-                alt=""
-              />
-              <span class="time-text">{{ singleNews.postDate }}</span>
-            </span>
-          </div>
+          <app-publishing-details
+          authorName="Mariano Fonseca"
+          [since]="singleNews.since"
+          ></app-publishing-details>
+
         </div>
       </div>
-      <hr style="margin: 18px 0; background-color: red" *ngIf="!lastItem" />
+      <div class="hr" *ngIf="!lastItem"></div>
     </ng-container>
     <a class="next-link" routerLink="">Próximo</a>
   </section>
@@ -88,7 +77,7 @@
             src="assets/icons/black-clock.png"
             alt=""
           />
-          <span>{{ topNew.postDate }}</span>
+          <span>{{ topNew.since }}</span>
         </div>
       </div>
     </article>
@@ -204,3 +193,128 @@
   </div>
 </section>
 
+<section class="marks">
+  <h1 class="marks-title">
+    <img
+      src="assets/icons/marks.png"
+      alt="marks-icon"
+      class="marks-title-icon"
+    />
+    <span class="marks-title-text">MARCAS</span>
+  </h1>
+  <section class="floating-options">
+    <a routerLink="/news" class="see-all">Ver todas</a>
+  </section>
+
+  <div class="marks-flex-container">
+    <div class="marks-list">
+      <app-marks-card *ngFor="let marks of marks"
+        [type]="'opinion'"
+        [thumbnailPath]="marks.thumbnailPath"
+        [title]="marks.title"
+        [publishingDetails]="marks.publishingDetails"
+        [contentBody]="marks.contentBody"
+      ></app-marks-card>
+    </div>
+    <div class="ads">
+      <div class="ad-wrapper-1">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-1"></div>
+      </div>
+      <div class="ad-wrapper-2">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-2"></div>
+      </div>
+      <div class="ad-wrapper-3">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-3"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="opinion">
+  <h1 class="opinion-title">
+    <img
+      src="assets/icons/marks.png"
+      alt="opinion-icon"
+      class="opinion-title-icon"
+    />
+    <span class="opinion-title-text">OPINIÃO</span>
+  </h1>
+  <section class="floating-options">
+    <a routerLink="/news" class="see-all">Ver todas</a>
+  </section>
+
+  <div class="opinion-flex-container">
+    <div class="other-opinions-list">
+      <app-marks-card *ngFor="let opinion of opinions"
+        [type]="'opinion'"
+        [thumbnailPath]="opinion.thumbnailPath"
+        [title]="opinion.title"
+        [publishingDetails]="opinion.publishingDetails"
+        [contentBody]="opinion.contentBody"
+      ></app-marks-card>
+    </div>
+    <div class="ads">
+      <div class="ad-wrapper-1">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-1"></div>
+      </div>
+      <div class="ad-wrapper-2">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-2"></div>
+      </div>
+      <div class="ad-wrapper-3">
+        <p class="ad-text">Publicidade</p>
+        <div class="ad-3"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-flex-container">
+    <div class="wrapper">
+      <h3 class="footer-title">Radar Kianda</h3>
+      <p class="footer-text">
+        Radar Kianda é um portal de referência em Angola, com os principais conteúdos que marcam o universo da informação e do entretenimento.
+      </p>
+    </div>
+
+    <div class="wrapper">
+
+      <div class="footer-title">
+        <h3>Newsletter</h3>
+        <p class="footer-text">
+          Receba todas  as novidades em primeira mão
+        </p>
+        <input type="text" placeholder="Endereço de email">
+        <button class="sign-btn">Assinar</button>
+      </div>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <section class="footer-links">
+    <div>
+
+      <ul>
+        <li><a routerLink="">Notícias</a></li>
+        <li><a routerLink="">Música</a></li>
+        <li><a routerLink="">Entretenimento</a></li>
+        <li><a routerLink="">Lifestyle</a></li>
+        <li><a routerLink="">Marcas</a></li>
+        <li><a routerLink="">Opinião</a></li>
+      </ul>
+      Contactos: <span class="email-address">contactos@radarkianda.com</span>
+    </div>
+    <div class="social">
+      Siga-nos
+      <img src="assets/icons/fb-icon.png" alt="">
+      <img src="assets/icons/insta-icon.png" alt="">
+    </div>
+  </section>
+  <p class="copyright">Copyright © 2022 Radar Kianda. Todos os direitos reservados.</p>
+</footer>

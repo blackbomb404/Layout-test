@@ -1,0 +1,24 @@
+<article class="marks-card">
+  <img
+    [src]="thumbnailPath"
+    alt=""
+    class="marks-card-thumbnail"
+  />
+  <div class="marks-card-content">
+    <h4 class="marks-card-content-title">
+      <a routerLink="/news"
+      [class.blue]="type === 'mark'"
+      [class.orange]="type === 'opinion'">{{title}}</a>
+    </h4>
+    <p class="marks-card-content-body">
+      {{contentBody}}
+    </p>
+    <app-publishing-details
+      type="marks"
+      [authorPhotoPath]="publishingDetails.authorPhotoPath"
+      [authorName]="publishingDetails.authorName"
+      [since]="publishingDetails.since"
+      [postDate]="publishingDetails.postDate">
+    </app-publishing-details>
+  </div>
+</article>

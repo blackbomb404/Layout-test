@@ -1,7 +1,7 @@
 
 export interface INews {
+  imagePath: String;
   title: String;
   author?: String;
-  imagePath: String;
-  postDate: String;
+  since: String;
 }

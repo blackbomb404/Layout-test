@@ -1,27 +1,42 @@
 @use '/src/assets/styles/colors' as c;
 
 .publishing-details {
+  // display: flex;
+  // justify-content: space-between;
 
   .author-photo {
     $size: 22px;
     width: $size;
     height: $size;
     border-radius: 50%;
-    border: 2px solid c.$gold-text;
+    border: 2px solid #fff;
     object-fit: cover;
     object-position: center;
     vertical-align: text-bottom;
+    margin-right: 4px;
   }
 
   .author-name {
     display: inline-block;
-    margin-left: 8px;
     font-weight: 500;
+    color: c.$text-color;
   }
 
   .since {
-    font-weight: 300;
+    font-weight: 200;
     color: rgba(0, 0, 0, .5)
+  }
+  .post-date {
+    display: inline-block;
+    margin-left: 48px;
+
+    .black-clock-icon {
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+    .time-text {
+      font-size: 1rem;
+    }
   }
 
   %views-comments {
@@ -45,14 +60,27 @@
     margin-left: 16px;
   }
 
+  // #region Title colors
   .gold {
-    border-color: c.$gold-text;
+    border-color: c.$music-color;
   }
   .metal {
-    border-color: c.$metal;
+    border-color: c.$entertainment-color;
   }
   .apple {
-    border-color: c.$apple;
+    border-color: c.$lifestyle-color;
   }
+  .blue {
+    border-color: c.$marks-color;
+  }
+  // #endregion
+
+  .dark {
+    color: c.$text-color;
+  }
+  .light {
+    color: #fff;
+  }
+
 }
 

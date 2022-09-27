@@ -1,0 +1,21 @@
+<article class="opinion-big-card">
+  <img
+    [src]="thumbnailPath"
+    alt=""
+    class="opinion-big-card-thumbnail"
+  />
+  <app-publishing-details
+      [authorPhotoPath]="publishingDetails.authorPhotoPath"
+      [authorName]="publishingDetails.authorName"
+      [since]="publishingDetails.since"
+      [postDate]="publishingDetails.postDate">
+  </app-publishing-details>
+  <div class="opinion-big-card-content">
+    <h4 class="opinion-big-card-content-title">
+      <a routerLink="/news">{{title}}</a>
+    </h4>
+    <p class="opinion-big-card-content-body">
+      {{contentBody}}
+    </p>
+  </div>
+</article>

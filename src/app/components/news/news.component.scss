@@ -1,6 +1,18 @@
 @use "/src/assets/styles/colors" as c;
 
-$sections-margin: 100px;
+$sections-margin: 133px;
+$titles-bottom-margin: 64px;
+
+// #region Mixins
+
+@mixin section_title($color) {
+  color: $color;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+// #endregion
 
 .news-wrapper {
   display: flex;
@@ -33,7 +45,7 @@ $sections-margin: 100px;
         $vertical-spacing: 24px;
 
         .news-title {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: #fff;
           margin-bottom: $vertical-spacing;
         }
@@ -45,13 +57,13 @@ $sections-margin: 100px;
         }
 
         .tag {
-          color: c.$green;
+          color: #fff;
           background-color: #fff;
-          background-color: transparentize(c.$green, 0.7);
+          background-color: transparentize(#fff, 0.8);
           display: inline-block;
           padding: 4px 8px;
           border-radius: 4px;
-          font-weight: 600;
+          font-weight: 500;
         }
 
         .flex {
@@ -100,7 +112,9 @@ $sections-margin: 100px;
         bottom: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to top, #000 -20%, rgba(0, 0, 0, 0.1) 120%);
+        background-image:
+        linear-gradient(to top, #000 -20%, rgba(0, 0, 0, 0.1) 120%),
+          radial-gradient(circle at top right, transparent, rgba(0, 0, 0, 0.8) 100%);
       }
     }
   }
@@ -142,23 +156,28 @@ $sections-margin: 100px;
 
         .single-news-title {
           font-size: 1rem;
+          font-weight: 600;
         }
       }
 
-      .single-news-author {
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
+      // .single-news-author {
+      //   font-weight: 600;
+      //   font-size: 0.9rem;
+      // }
 
-      .single-news-details {
-        display: flex;
-        column-gap: 16px;
-      }
+      // .single-news-details {
+      //   display: flex;
+      //   column-gap: 16px;
+      // }
 
-      .single-news-time {
-        font-weight: 300;
-        font-size: 0.8rem;
-      }
+      // .single-news-time {
+      //   font-weight: 300;
+      //   font-size: 0.8rem;
+      // }
+    }
+    .hr {
+      margin: 18px 0;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.05);
     }
   }
 
@@ -332,24 +351,21 @@ $sections-margin: 100px;
       }
     }
     .see-all {
-      color: c.$gold-text;
+      color: c.$music-color;
       text-decoration: none;
       font-weight: 500;
     }
   }
 
   .music-news-title {
-    margin-bottom: 64px;
+    margin-bottom: $titles-bottom-margin;
 
     .music-news-title-icon {
       vertical-align: text-top;
     }
 
     .music-news-title-text {
-      color: c.$gold-text;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-left: 16px;
+      @include section_title(c.$music-color);
     }
   }
 
@@ -373,24 +389,21 @@ $sections-margin: 100px;
     right: 0;
 
     .see-all {
-      color: c.$metal;
+      color: c.$entertainment-color;
       text-decoration: none;
       font-weight: 500;
     }
   }
 
   .entertainment-news-title {
-    margin-bottom: 64px;
+    margin-bottom: $titles-bottom-margin;
 
     .entertainment-news-title-icon {
       vertical-align: text-top;
     }
 
     .entertainment-news-title-text {
-      color: c.$metal;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-left: 16px;
+      @include section_title(c.$entertainment-color);
     }
   }
 
@@ -398,7 +411,6 @@ $sections-margin: 100px;
     @include news-list();
   }
 }
-
 
 .lifestyle-news {
   @include shared();
@@ -415,28 +427,307 @@ $sections-margin: 100px;
     right: 0;
 
     .see-all {
-      color: c.$apple;
+      color: c.$lifestyle-color;
       text-decoration: none;
       font-weight: 500;
     }
   }
 
   .lifestyle-news-title {
-    margin-bottom: 64px;
+    margin-bottom: $titles-bottom-margin;
 
     .lifestyle-news-title-icon {
       vertical-align: text-top;
     }
 
     .lifestyle-news-title-text {
-      color: c.$apple;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-left: 16px;
+      @include section_title(c.$lifestyle-color);
     }
   }
 
   .lifestyle-news-list {
     @include news-list();
+  }
+}
+
+section.marks {
+  margin: $sections-margin 0 $sections-margin 60px;
+  position: relative;
+
+  .floating-options {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    padding: 24px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .see-all {
+      color: c.$marks-color;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .marks-title {
+    margin-bottom: $titles-bottom-margin;
+
+    .marks-title-text {
+      @include section_title(c.$opinion-color);
+    }
+
+    & ~ * {
+      margin-right: 60px;
+    }
+  }
+
+  .marks-flex-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 86px;
+
+    .marks-list {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      row-gap: 72px;
+    }
+
+    .ads {
+      display: grid;
+      grid-template-areas:
+        "img1 img1"
+        "img2 img3";
+      gap: 40px;
+
+      .ad-1,
+      .ad-2,
+      .ad-3 {
+        background: url(../../../assets/images/african-kid.png) no-repeat;
+        background-size: cover;
+        background-position: top 0% left 50%;
+        border-radius: 7px;
+        width: 100%;
+        height: 100%;
+      }
+
+      [class^="ad-wrapper-"] {
+        .ad-text {
+          text-align: center;
+          color: transparentize(#010408, 0.8);
+          font-size: 0.8rem;
+          margin-bottom: 4px;
+        }
+      }
+
+      .ad-wrapper-1 {
+        grid-area: img1;
+        margin-bottom: 32px;
+      }
+      .ad-wrapper-2 {
+        grid-area: img2;
+      }
+      .ad-wrapper-3 {
+        grid-area: img3;
+      }
+    }
+  }
+}
+
+.see-all-news-link {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: $sections-margin 0;
+
+  img {
+    vertical-align: text-top;
+    margin-left: 4px;
+  }
+}
+
+section.opinion {
+  margin: $sections-margin 0 $sections-margin 60px;
+  position: relative;
+
+  .floating-options {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    padding: 24px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .see-all {
+      color: c.$marks-color;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .opinion-title {
+    margin-bottom: $titles-bottom-margin;
+
+    .opinion-title-text {
+      @include section_title(c.$opinion-color);
+    }
+
+    & ~ * {
+      margin-right: 60px;
+    }
+  }
+
+  .opinion-flex-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 86px;
+
+    .other-opinions-list {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      row-gap: 72px;
+    }
+
+    .ads {
+      display: grid;
+      grid-template-areas:
+        "img1 img1"
+        "img2 img3";
+      gap: 40px;
+
+      .ad-1,
+      .ad-2,
+      .ad-3 {
+        background: url(../../../assets/images/african-kid.png) no-repeat;
+        background-size: cover;
+        background-position: top 0% left 50%;
+        border-radius: 7px;
+        width: 100%;
+        height: 100%;
+      }
+
+      [class^="ad-wrapper-"] {
+        .ad-text {
+          text-align: center;
+          color: transparentize(#010408, 0.8);
+          font-size: 0.8rem;
+          margin-bottom: 4px;
+        }
+      }
+
+      .ad-wrapper-1 {
+        grid-area: img1;
+        margin-bottom: 32px;
+      }
+      .ad-wrapper-2 {
+        grid-area: img2;
+      }
+      .ad-wrapper-3 {
+        grid-area: img3;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #010408;
+  color: #fff;
+  padding-bottom: 32px;
+  margin-top: 128px;
+
+  .footer-flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px;
+    padding: 48px 0;
+
+    .wrapper {
+      flex-basis: 30%;
+
+      input {
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.25);
+        font-family: inherit;
+        outline: none;
+        margin-right: 4px;
+        width: 320px;
+      }
+
+      .sign-btn {
+        background-color: c.$green;
+        color: #fff;
+        padding: 16px 24px;
+        border-radius: 4px;
+        font-family: inherit;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(c.$green, 5);
+        }
+      }
+    }
+
+    .footer-title {
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+
+    .footer-text {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+  }
+  .hr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .footer-links {
+    margin: 32px 60px 0;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      display: inline-block;
+
+      ul {
+        display: inline-flex;
+        column-gap: 32px;
+        list-style: none;
+        margin-right: 50px;
+
+        li {
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+
+      .email-address {
+        color: c.$green;
+      }
+    }
+
+    .social {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 12px;
+    }
+  }
+  .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: inherit;
+    font-size: 0.8rem;
   }
 }

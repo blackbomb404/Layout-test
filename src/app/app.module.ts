@@ -14,6 +14,8 @@ import { PublishingDetailsComponent } from './components/publishing-details/publ
 import { MusicNewsComponent } from './components/music-news/music-news.component';
 import { EntertainmentNewsComponent } from './components/entertainment-news/entertainment-news.component';
 import { LifestyleNewsComponent } from './components/lifestyle-news/lifestyle-news.component';
+import { MarksCardComponent } from './components/marks-card/marks-card.component';
+import { OpinionBigCardComponent } from './components/opinion-big-card/opinion-big-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LifestyleNewsComponent } from './components/lifestyle-news/lifestyle-ne
     PublishingDetailsComponent,
     MusicNewsComponent,
     EntertainmentNewsComponent,
-    LifestyleNewsComponent
+    LifestyleNewsComponent,
+    MarksCardComponent,
+    OpinionBigCardComponent
   ],
   imports: [
     BrowserModule,
