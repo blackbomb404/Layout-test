@@ -15,10 +15,10 @@
           <div class="tag">#entretenimento</div>
 
           <app-publishing-details
-          authorPhotoPath="assets/images/smilling-1.jpg"
-          authorName="@mariano_fonseca"
-          since=" - há 5 dias"
-          textColor="light"
+            authorPhotoPath="assets/images/smilling-1.jpg"
+            authorName="@mariano_fonseca"
+            since=" - há 5 dias"
+            textColor="light"
           ></app-publishing-details>
         </div>
 
@@ -43,10 +43,9 @@
         <div class="single-news-text">
           <h5 class="single-news-title">{{ singleNews.title }}</h5>
           <app-publishing-details
-          authorName="Mariano Fonseca"
-          [since]="singleNews.since"
+            authorName="Mariano Fonseca"
+            [since]="singleNews.since"
           ></app-publishing-details>
-
         </div>
       </div>
       <div class="hr" *ngIf="!lastItem"></div>
@@ -109,19 +108,63 @@
     <div class="see">
       <span>Visualizar</span>
       <div class="options">
-
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 9V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15" stroke="#010408" stroke-linecap="round"/>
-          <path d="M3 9V18C3 18.9428 3 19.4142 3.29289 19.7071C3.58579 20 4.05719 20 5 20H9" stroke="#010408" stroke-linecap="round"/>
-          <path d="M15 20H9" stroke="#010408" stroke-linecap="round"/>
-          <path d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z" stroke="#010408" stroke-linecap="round"/>
-          <path d="M3 15H21" stroke="#010408" stroke-linecap="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 9V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15"
+            stroke="#010408"
+            stroke-linecap="round"
+          />
+          <path
+            d="M3 9V18C3 18.9428 3 19.4142 3.29289 19.7071C3.58579 20 4.05719 20 5 20H9"
+            stroke="#010408"
+            stroke-linecap="round"
+          />
+          <path d="M15 20H9" stroke="#010408" stroke-linecap="round" />
+          <path
+            d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z"
+            stroke="#010408"
+            stroke-linecap="round"
+          />
+          <path d="M3 15H21" stroke="#010408" stroke-linecap="round" />
         </svg>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 9H21V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15V9Z" stroke="#010408" stroke-opacity="0.4" stroke-linecap="round"/>
-          <path d="M3 9H9V20H5C4.05719 20 3.58579 20 3.29289 19.7071C3 19.4142 3 18.9428 3 18V9Z" stroke="#010408" stroke-opacity="0.4" stroke-linecap="round"/>
-          <rect x="9" y="9" width="6" height="11" stroke="#999B9C" stroke-linecap="round"/>
-          <path d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z" stroke="#999B9C" stroke-linecap="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 9H21V18C21 18.9428 21 19.4142 20.7071 19.7071C20.4142 20 19.9428 20 19 20H15V9Z"
+            stroke="#010408"
+            stroke-opacity="0.4"
+            stroke-linecap="round"
+          />
+          <path
+            d="M3 9H9V20H5C4.05719 20 3.58579 20 3.29289 19.7071C3 19.4142 3 18.9428 3 18V9Z"
+            stroke="#010408"
+            stroke-opacity="0.4"
+            stroke-linecap="round"
+          />
+          <rect
+            x="9"
+            y="9"
+            width="6"
+            height="11"
+            stroke="#999B9C"
+            stroke-linecap="round"
+          />
+          <path
+            d="M3 6C3 5.05719 3 4.58579 3.29289 4.29289C3.58579 4 4.05719 4 5 4H19C19.9428 4 20.4142 4 20.7071 4.29289C21 4.58579 21 5.05719 21 6V9H3V6Z"
+            stroke="#999B9C"
+            stroke-linecap="round"
+          />
         </svg>
       </div>
     </div>
@@ -129,14 +172,13 @@
   </section>
   <div class="music-news-list">
     <ng-container *ngFor="let musicNew of musicNews">
-
       <app-music-news
         [thumbnailPath]="musicNew.thumbnailPath"
         [title]="musicNew.title"
         [publishingDetails]="musicNew.publishingDetails"
-        [contentBody]="musicNew.contentBody">
+        [contentBody]="musicNew.contentBody"
+      >
       </app-music-news>
-
     </ng-container>
   </div>
 </section>
@@ -155,14 +197,13 @@
   </section>
   <div class="entertainment-news-list">
     <ng-container *ngFor="let entertainmentNew of entertainmentNews">
-
       <app-entertainment-news
         [thumbnailPath]="entertainmentNew.thumbnailPath"
         [title]="entertainmentNew.title"
         [publishingDetails]="entertainmentNew.publishingDetails"
-        [contentBody]="entertainmentNew.contentBody">
+        [contentBody]="entertainmentNew.contentBody"
+      >
       </app-entertainment-news>
-
     </ng-container>
   </div>
 </section>
@@ -181,14 +222,13 @@
   </section>
   <div class="lifestyle-news-list">
     <ng-container *ngFor="let lifestyleNew of lifestyleNews">
-
       <app-lifestyle-news
         [thumbnailPath]="lifestyleNew.thumbnailPath"
         [title]="lifestyleNew.title"
         [publishingDetails]="lifestyleNew.publishingDetails"
-        [contentBody]="lifestyleNew.contentBody">
+        [contentBody]="lifestyleNew.contentBody"
+      >
       </app-lifestyle-news>
-
     </ng-container>
   </div>
 </section>
@@ -208,7 +248,8 @@
 
   <div class="marks-flex-container">
     <div class="marks-list">
-      <app-marks-card *ngFor="let marks of marks"
+      <app-marks-card
+        *ngFor="let marks of marks"
         [type]="'opinion'"
         [thumbnailPath]="marks.thumbnailPath"
         [title]="marks.title"
@@ -231,7 +272,6 @@
       </div>
     </div>
   </div>
-
 </section>
 
 <section class="opinion">
@@ -249,7 +289,8 @@
 
   <div class="opinion-flex-container">
     <div class="other-opinions-list">
-      <app-marks-card *ngFor="let opinion of opinions"
+      <app-marks-card
+        *ngFor="let opinion of opinions"
         [type]="'opinion'"
         [thumbnailPath]="opinion.thumbnailPath"
         [title]="opinion.title"
@@ -272,7 +313,6 @@
       </div>
     </div>
   </div>
-
 </section>
 
 <footer>
@@ -280,26 +320,27 @@
     <div class="wrapper">
       <h3 class="footer-title">Radar Kianda</h3>
       <p class="footer-text">
-        Radar Kianda é um portal de referência em Angola, com os principais conteúdos que marcam o universo da informação e do entretenimento.
+        Radar Kianda é um portal de referência em Angola, com os principais
+        conteúdos que marcam o universo da informação e do entretenimento.
       </p>
     </div>
 
     <div class="wrapper">
-
-      <div class="footer-title">
-        <h3>Newsletter</h3>
-        <p class="footer-text">
-          Receba todas  as novidades em primeira mão
-        </p>
-        <input type="text" placeholder="Endereço de email">
-        <button class="sign-btn">Assinar</button>
-      </div>
+      <h3 class="footer-title">Newsletter</h3>
+      <p class="footer-text">Receba todas as novidades em primeira mão</p>
+      <form action="">
+        <input
+          class="email-address"
+          type="text"
+          placeholder="Endereço de email"
+        />
+        <button type="button" class="sign-btn">Assinar</button>
+      </form>
     </div>
   </div>
   <div class="hr"></div>
   <section class="footer-links">
     <div>
-
       <ul>
         <li><a routerLink="">Notícias</a></li>
         <li><a routerLink="">Música</a></li>
@@ -312,9 +353,11 @@
     </div>
     <div class="social">
       Siga-nos
-      <img src="assets/icons/fb-icon.png" alt="">
-      <img src="assets/icons/insta-icon.png" alt="">
+      <img src="assets/icons/fb-icon.png" alt="" />
+      <img src="assets/icons/insta-icon.png" alt="" />
     </div>
   </section>
-  <p class="copyright">Copyright © 2022 Radar Kianda. Todos os direitos reservados.</p>
+  <p class="copyright">
+    Copyright © 2022 Radar Kianda. Todos os direitos reservados.
+  </p>
 </footer>
