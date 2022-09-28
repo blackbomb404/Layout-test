@@ -9,6 +9,7 @@ import { MusicComponent } from './components/music/music.component';
 import { MarksComponent } from './components/marks/marks.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'news', pathMatch: 'full' },
   { path: '', component: HomepageComponent, children: [
     { path: 'news', component: NewsComponent },
     { path: 'music', component: MusicComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
     { path: 'lifestyle', component: LifestyleComponent },
     { path: 'marks', component: MarksComponent },
     { path: 'opinion', component: OpinionComponent }
-  ] }
+  ] },
 ];
 
 @NgModule({

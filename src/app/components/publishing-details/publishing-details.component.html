@@ -8,10 +8,13 @@
   [class.orange]="type === 'opinion'"
   [src]="authorPhotoPath" alt="">
 
-  <span class="author-name">{{authorName}}</span>
+  <span class="author-name"
+  [class.dark]="textColor === 'dark'"
+  [class.light]="textColor === 'light'">{{authorName}}</span>
+
   <span class="since"
-  [class.dark]="sinceTextColor === 'dark'"
-  [class.light]="sinceTextColor === 'light'"
+  [class.dark]="textColor === 'dark'"
+  [class.light]="textColor === 'light'"
   >{{since}}</span>
 
   <!-- <ng-container *ngIf="showViewsAndComments"> -->

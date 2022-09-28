@@ -10,7 +10,7 @@ export class PublishingDetailsComponent implements OnInit {
   @Input() authorPhotoPath: String = '';
   @Input() authorName: String = '';
   @Input() since?: String = '';
-  @Input() sinceTextColor: 'light' | 'dark' = 'dark';
+  @Input() textColor: 'light' | 'dark' = 'dark';
   @Input() viewsIconPath?: String = '';
   @Input() views?: Number = 0;
   @Input() commentsIconPath?: String = '';
