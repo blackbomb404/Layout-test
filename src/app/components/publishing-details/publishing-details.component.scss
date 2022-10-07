@@ -4,17 +4,17 @@
   // display: flex;
   // justify-content: space-between;
 
-  .author-photo {
-    $size: 22px;
-    width: $size;
-    height: $size;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    object-fit: cover;
-    object-position: center;
-    vertical-align: text-bottom;
-    margin-right: 4px;
-  }
+  // .author-photo {
+  //   $size: 22px;
+  //   width: $size;
+  //   height: $size;
+  //   border-radius: 50%;
+  //   border: 2px solid #fff;
+  //   object-fit: cover;
+  //   object-position: center;
+  //   vertical-align: text-bottom;
+  //   margin-right: 4px;
+  // }
 
   .author-name {
     display: inline-block;
@@ -49,11 +49,19 @@
     & > span {
       margin-left: 4px;
     }
+
+    svg {
+      --size: 24px;
+      width: var(--size);
+      height: var(--size);
+      vertical-align: bottom;
+    }
   }
 
   .views {
     @extend %views-comments;
     margin-left: 24px;
+
   }
   .comments {
     @extend %views-comments;

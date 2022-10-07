@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { EntertainmentComponent } from './components/entertainment/entertainment.component';
-import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
-import { NewsComponent } from './components/news/news.component';
-import { OpinionComponent } from './components/opinion/opinion.component';
-import { MusicComponent } from './components/music/music.component';
-import { MarksComponent } from './components/marks/marks.component';
+import { NewsSectionComponent } from './components/news-section/news-section.component';
+import { EntertainmentSectionComponent } from './entertainment-section/entertainment-section.component';
+import { LifestyleSectionComponent } from './lifestyle-section/lifestyle-section.component';
+import { MarksSectionComponent } from './marks-section/marks-section.component';
+import { MusicSectionComponent } from './music-section/music-section.component';
+import { OpinionSectionComponent } from './opinion-section/opinion-section.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'news', pathMatch: 'full' },
   { path: '', component: HomepageComponent, children: [
-    { path: 'news', component: NewsComponent },
-    { path: 'music', component: MusicComponent },
-    { path: 'entertainment', component: EntertainmentComponent },
-    { path: 'lifestyle', component: LifestyleComponent },
-    { path: 'marks', component: MarksComponent },
-    { path: 'opinion', component: OpinionComponent }
+    { path: 'news', component: NewsSectionComponent },
+    { path: 'music', component: MusicSectionComponent },
+    { path: 'entertainment', component: EntertainmentSectionComponent },
+    { path: 'lifestyle', component: LifestyleSectionComponent },
+    { path: 'marks', component: MarksSectionComponent },
+    { path: 'opinion', component: OpinionSectionComponent }
   ] },
 ];
 

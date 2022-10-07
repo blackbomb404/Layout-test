@@ -3,11 +3,11 @@ import { IMusicNews } from 'src/app/models/IMusicNews';
 import { INews } from 'src/app/models/INews';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  selector: 'app-news-section',
+  templateUrl: './news-section.component.html',
+  styleUrls: ['./news-section.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsSectionComponent implements OnInit {
   news: INews[] = [
     {
       title: 'ANPG e parceiros do bloco 48 investem USD 1.4 milhões em projectos socias',

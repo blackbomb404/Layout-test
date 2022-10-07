@@ -11,9 +11,7 @@ export class PublishingDetailsComponent implements OnInit {
   @Input() authorName: String = '';
   @Input() since?: String = '';
   @Input() textColor: 'light' | 'dark' = 'dark';
-  @Input() viewsIconPath?: String = '';
-  @Input() views?: Number = 0;
-  @Input() commentsIconPath?: String = '';
+  @Input() views?: Number = 0;;
   @Input() comments?: Number = 0;
   @Input() postDate?: String = '';
 

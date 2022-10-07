@@ -263,8 +263,8 @@ $titles-bottom-margin: 64px;
       url(../../../assets/images/advertisement.jpg);
     background-size: cover;
     background-position: center;
-    width: 80%;
-    max-width: 1300px;
+    width: 90%;
+    max-width: 1400px;
     height: 275px;
     margin: 0 auto;
     position: relative;
@@ -475,7 +475,11 @@ section.marks {
     margin-bottom: $titles-bottom-margin;
 
     .marks-title-text {
-      @include section_title(c.$opinion-color);
+      @include section_title(c.$marks-color);
+    }
+
+    .marks-title-icon {
+      vertical-align: text-top;
     }
 
     & ~ * {
@@ -565,7 +569,7 @@ section.opinion {
     right: 0;
 
     .see-all {
-      color: c.$marks-color;
+      color: c.$opinion-color;
       text-decoration: none;
       font-weight: 500;
     }
@@ -574,8 +578,13 @@ section.opinion {
   .opinion-title {
     margin-bottom: $titles-bottom-margin;
 
+    svg {
+      vertical-align: text-top;
+    }
+
     .opinion-title-text {
       @include section_title(c.$opinion-color);
+
     }
 
     & ~ * {
