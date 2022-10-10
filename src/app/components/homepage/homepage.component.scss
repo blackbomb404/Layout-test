@@ -50,14 +50,53 @@ header {
           &.current-active {
             color: c.$green;
           }
+
+          svg {
+            // vertical-align: middle;
+            // margin-left: 4px;
+          }
         }
 
+      }
+      .search-loupe {
+        cursor: pointer;
+      }
+      .search-bar {
+        width: 0;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, .3);
+        // margin-right: 8px;
+        font-family: inherit;
+        outline: none;
+        padding-bottom: 4px;
+        transition: width .6s cubic-bezier(.04,.82,.68,.99);
+
+
+        &.active {
+          width: 260px;
+        }
+
+        &::placeholder {
+          color: rgba(0, 0, 0, .2);
+          opacity: 1;
+        }
+      }
+      svg {
+        cursor: pointer;
+        vertical-align: text-bottom;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
       }
 
     }
   }
 
 }
+
 
 main {
   padding: 33px 0 0;

@@ -49,7 +49,7 @@ export class NewsSectionComponent implements OnInit {
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
       since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new2.png'
+      imagePath: 'assets/images/blue-orange.png'
     },
     {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
@@ -62,10 +62,6 @@ export class NewsSectionComponent implements OnInit {
       imagePath: 'assets/images/top-new4.png'
     }
   ]
-  private musicViewsIconPath = 'assets/icons/views.png';
-  private musicCommentsIconPath = 'assets/icons/comments.png';
-  private entertainmentViewsIconPath = 'assets/icons/views-metal.png';
-  private entertainmentCommentsIconPath = 'assets/icons/comments-metal.png';
 
   musicNews: IMusicNews[] = [
     {
@@ -316,7 +312,9 @@ export class NewsSectionComponent implements OnInit {
       publishingDetails: {
         authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
+        since: ' - há 10 minutos',
+        views: 15,
+        comments: 15
       },
       contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
     },
@@ -326,7 +324,9 @@ export class NewsSectionComponent implements OnInit {
       publishingDetails: {
         authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
+        since: ' - há 10 minutos',
+        views: 15,
+        comments: 15
       },
       contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
     },
@@ -336,7 +336,9 @@ export class NewsSectionComponent implements OnInit {
       publishingDetails: {
         authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
+        since: ' - há 10 minutos',
+        views: 15,
+        comments: 15
       },
       contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
     }

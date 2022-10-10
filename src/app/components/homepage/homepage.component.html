@@ -3,13 +3,43 @@
     <a routerLink="/"> <img class="radar" src="assets/images/radar.png" alt="" /></a>
     <ul>
       <li><a routerLink="news" routerLinkActive="current-active">Notícias</a></li>
-      <li><a routerLink="music" routerLinkActive="current-active">Músicas</a></li>
-      <li><a routerLink="entertainment" routerLinkActive="current-active">Entretenimento</a></li>
-      <li><a routerLink="lifestyle" routerLinkActive="current-active">Lifestyle</a></li>
-      <li><a routerLink="marks" routerLinkActive="current-active">Marcas</a></li>
-      <li><a routerLink="opinion" routerLinkActive="current-active">Opinião</a></li>
-      <li><img src="assets/icons/search-loupe.png" alt=""></li>
+      <li><a class="flex" routerLink="music" routerLinkActive="current-active">Músicas
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1.59183L5 5.59183L1 1.59183" stroke="#B5BDC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </a></li>
+      <li><a class="flex" routerLink="entertainment" routerLinkActive="current-active">Entretenimento
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1.59183L5 5.59183L1 1.59183" stroke="#B5BDC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </a></li>
+      <li><a class="flex" routerLink="lifestyle" routerLinkActive="current-active">Lifestyle
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1.59183L5 5.59183L1 1.59183" stroke="#B5BDC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </a></li>
+      <li><a class="flex" routerLink="marks" routerLinkActive="current-active">Marcas
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1.59183L5 5.59183L1 1.59183" stroke="#B5BDC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </a></li>
+      <li><a class="flex" routerLink="opinion" routerLinkActive="current-active">Opinião
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1.59183L5 5.59183L1 1.59183" stroke="#B5BDC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </a></li>
+      <li class="flex" style="column-gap: 8px">
+        <input type="text" class="search-bar" placeholder="Pesquisar publicações" [class.active]="active">
+        <img class="search-loupe" [src]="'assets/icons/' + (active ? 'close.png' : 'search-loupe.png')" alt="" (click)="active = !active">
+
+      </li>
     </ul>
+
   </nav>
 </header>
 <main>

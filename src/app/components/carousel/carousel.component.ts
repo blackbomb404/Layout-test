@@ -7,13 +7,13 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('carousel')
+  @ViewChild('carousel', { static: true })
   carousel!: ElementRef;
 
-  @ViewChild('slides')
+  @ViewChild('slides', { static: true })
   slides!: ElementRef;
 
-  @ViewChild('trackers')
+  @ViewChild('trackers', { static: true })
   trackers!: ElementRef;
 
   carouselNative!: HTMLElement;
@@ -36,13 +36,6 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.trackersNative = this.trackers.nativeElement as HTMLElement;
     this.slidesAmount = (this.slides.nativeElement as HTMLElement).childElementCount;
 
-    // setTimeout(() => {
-    //   console.clear();
-    //   console.log('carouselNative :>> ', this.carouselNative);
-    //   console.log('slidesNative :>> ', this.slidesNative);
-    //   console.log('trackersNative :>> ', this.trackersNative);
-    // }, 500)
-
     const observer = new ResizeObserver(entries => {
       entries.forEach(entry => {
           this.carouselCurrentWidth = entry.contentRect.width;
@@ -56,7 +49,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   previousSlide(){
     if(this.currentItemIndex > 0){
 
-      this.slidesNative.scrollTo({left: (this.carouselCurrentWidth * this.currentItemIndex--) - this.carouselCurrentWidth, behavior: 'smooth'});
+      this.slidesNative.scrollTo({left: ((this.carouselCurrentWidth + 32) * this.currentItemIndex--) - (this.carouselCurrentWidth + 32), behavior: 'smooth'});
       this.clearTrackers();
       this.trackersNative.children[this.currentItemIndex].classList.add('active');
     }
@@ -64,7 +57,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   nextSlide(){
     if(this.currentItemIndex + 1 < this.slidesNative.childElementCount){
-      this.slidesNative.scrollTo({left: this.carouselCurrentWidth * ++this.currentItemIndex, behavior: 'smooth'});
+      this.slidesNative.scrollTo({left: (this.carouselCurrentWidth + 32) * ++this.currentItemIndex, behavior: 'smooth'});
       this.clearTrackers();
       this.trackersNative.children[this.currentItemIndex].classList.add('active');
     }
@@ -82,14 +75,13 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   }
 
   trackersClick(event: Event){
-    console.log(event.target);
     const target = event.target as HTMLElement;
     if(target.classList.contains('tracker') && !target.classList.contains('active')){
         this.clearTrackers();
 
         this.currentItemIndex = Array.from(this.trackersNative.children).indexOf(target);
 
-        this.slidesNative.scrollTo({left: this.carouselCurrentWidth * this.currentItemIndex, behavior: 'smooth'});
+        this.slidesNative.scrollTo({left: (this.carouselCurrentWidth + 32) * this.currentItemIndex, behavior: 'smooth'});
         this.trackersNative.children[this.currentItemIndex].classList.add('active');
 
         target.classList.add('active');

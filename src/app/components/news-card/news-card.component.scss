@@ -1,11 +1,11 @@
 @use '/src/assets/styles/colors' as c;
 
-.marks-card {
+.music-new {
   display: flex;
   column-gap: 24px;
   // width: 80%;
 
-  .marks-card-thumbnail {
+  .music-new-thumbnail {
     width: 187px;
     height: 151px;
     // height: auto;
@@ -14,42 +14,41 @@
     border-radius: 4px;
   }
 
-  .marks-card-content {
+  .music-new-content {
     display: flex;
     flex-direction: column;
     row-gap: 16px;
     color: rgba(0, 0, 0, .6);
 
-    .marks-card-content-title {
+    .music-new-content-title {
       font-weight: 600;
-      font-size: 1.2rem;
       // margin-bottom: 16px;
 
       a {
         color: #010408;
         text-decoration: none;
 
-        &:hover {
-          color: c.$marks-color;
-        }
+        // &:hover {
+        //   color: c.$music-color;
+        // }
       }
-    }
 
-    .marks-card-content-body {
-      font-size: .9rem;
+      .type-music:hover {
+        color: c.$music-color;
+      }
+      .type-entertainment:hover {
+        color: c.$entertainment-color;
+      }
+      .type-lifestyle:hover {
+        color: c.$lifestyle-color;
+      }
+      .type-marks:hover {
+        color: c.$marks-color;
+      }
+
+
+
     }
   }
 
-  // .blue {
-  //   &:hover {
-  //     color: c.$marks-color !important;
-  //   }
-  // }
-
-  // .orange {
-  //   &:hover {
-
-  //     color: c.$orange !important;
-  //   }
-  // }
 }

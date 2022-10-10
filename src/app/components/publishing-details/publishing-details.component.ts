@@ -6,14 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./publishing-details.component.scss']
 })
 export class PublishingDetailsComponent implements OnInit {
-  @Input() type: 'music' | 'entertainment' | 'lifestyle' | 'marks' | 'opinion' | 'none' = 'none';
-  @Input() authorPhotoPath: String = '';
   @Input() authorName: String = '';
   @Input() since?: String = '';
   @Input() textColor: 'light' | 'dark' = 'dark';
   @Input() views?: Number = 0;;
   @Input() comments?: Number = 0;
-  @Input() postDate?: String = '';
 
   @Input() showViewsAndComments: Boolean = false;
 

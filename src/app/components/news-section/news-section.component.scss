@@ -17,7 +17,7 @@ $titles-bottom-margin: 64px;
 .news-wrapper {
   display: flex;
   justify-content: space-between;
-  column-gap: 86px;
+  column-gap: 32px;
   margin: 0 60px;
 
   .slider {
@@ -34,6 +34,9 @@ $titles-bottom-margin: 64px;
 
       .news-thumbnail {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top 0 left 50%;
       }
       .abs {
         position: absolute;
@@ -63,7 +66,7 @@ $titles-bottom-margin: 64px;
           display: inline-block;
           padding: 4px 8px;
           border-radius: 4px;
-          font-weight: 500;
+          font-weight: 400;
         }
 
         .flex {
@@ -127,14 +130,21 @@ $titles-bottom-margin: 64px;
     border-radius: 7px;
     padding: 20px;
     position: relative;
+    flex-shrink: 0;
 
     .next-link {
-      color: rgba(0, 0, 0, 0.4);
+      color: rgba(0, 0, 0, .4);
       text-decoration: none;
       position: absolute;
       bottom: 33.5px;
-      right: 56px;
+      right: 32px;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: rgba(0, 0, 0, .6);
+      }
     }
 
     .single-news {
@@ -160,20 +170,6 @@ $titles-bottom-margin: 64px;
         }
       }
 
-      // .single-news-author {
-      //   font-weight: 600;
-      //   font-size: 0.9rem;
-      // }
-
-      // .single-news-details {
-      //   display: flex;
-      //   column-gap: 16px;
-      // }
-
-      // .single-news-time {
-      //   font-weight: 300;
-      //   font-size: 0.8rem;
-      // }
     }
     .hr {
       margin: 18px 0;
@@ -307,7 +303,7 @@ $titles-bottom-margin: 64px;
   justify-content: space-between;
   row-gap: 32px;
 
-  app-music-news,
+  app-news-card,
   app-entertainment-news,
   app-lifestyle-news {
     width: 47%;
@@ -326,7 +322,7 @@ $titles-bottom-margin: 64px;
     display: inline-flex;
     align-items: center;
     column-gap: 32px;
-    padding: 24px;
+    padding: 20px 16px;
     border-radius: 7px;
     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
     width: auto;
@@ -336,6 +332,7 @@ $titles-bottom-margin: 64px;
 
     .see {
       display: flex;
+      align-items: center;
       column-gap: 16px;
 
       span {
@@ -354,6 +351,12 @@ $titles-bottom-margin: 64px;
       color: c.$music-color;
       text-decoration: none;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: transparentize(c.$music-color, .4);
+      }
     }
   }
 
@@ -392,6 +395,12 @@ $titles-bottom-margin: 64px;
       color: c.$entertainment-color;
       text-decoration: none;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: transparentize(c.$entertainment-color, .4);
+      }
     }
   }
 
@@ -430,6 +439,12 @@ $titles-bottom-margin: 64px;
       color: c.$lifestyle-color;
       text-decoration: none;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: transparentize(c.$lifestyle-color, .4);
+      }
     }
   }
 
@@ -451,7 +466,7 @@ $titles-bottom-margin: 64px;
 }
 
 section.marks {
-  margin: $sections-margin 0 $sections-margin 60px;
+  margin: $sections-margin 60px;
   position: relative;
 
   .floating-options {
@@ -468,6 +483,12 @@ section.marks {
       color: c.$marks-color;
       text-decoration: none;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: transparentize(c.$marks-color, .4);
+      }
     }
   }
 
@@ -482,9 +503,9 @@ section.marks {
       vertical-align: text-top;
     }
 
-    & ~ * {
-      margin-right: 60px;
-    }
+    // & ~ * {
+    //   margin-right: 60px;
+    // }
   }
 
   .marks-flex-container {
@@ -555,7 +576,7 @@ section.marks {
 }
 
 section.opinion {
-  margin: $sections-margin 0 $sections-margin 60px;
+  margin: $sections-margin 60px;
   position: relative;
 
   .floating-options {
@@ -572,6 +593,13 @@ section.opinion {
       color: c.$opinion-color;
       text-decoration: none;
       font-weight: 500;
+
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+        color: rgba(0, 0, 0, .4);
+      }
+
     }
   }
 
@@ -587,9 +615,9 @@ section.opinion {
 
     }
 
-    & ~ * {
-      margin-right: 60px;
-    }
+    // & ~ * {
+    //   margin-right: 60px;
+    // }
   }
 
   .opinion-flex-container {

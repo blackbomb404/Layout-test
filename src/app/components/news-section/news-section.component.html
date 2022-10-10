@@ -50,7 +50,11 @@
       </div>
       <div class="hr" *ngIf="!lastItem"></div>
     </ng-container>
-    <a class="next-link" routerLink="">Próximo</a>
+    <a class="next-link" routerLink="">Próximo
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
 </div>
 
@@ -71,11 +75,6 @@
         <div class="top-new-title">{{ topNew.title }}</div>
 
         <div class="top-new-postDate">
-          <img
-            class="black-clock-icon"
-            src="assets/icons/black-clock.png"
-            alt=""
-          />
           <span>{{ topNew.since }}</span>
         </div>
       </div>
@@ -168,18 +167,20 @@
         </svg>
       </div>
     </div>
-    <a routerLink="/news" class="see-all">Ver todas</a>
+    <a routerLink="/news" class="see-all">Ver todas
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
   <div class="music-news-list">
-    <ng-container *ngFor="let musicNew of musicNews">
-      <app-music-news
+      <app-news-card *ngFor="let musicNew of musicNews"
         [thumbnailPath]="musicNew.thumbnailPath"
         [title]="musicNew.title"
         [publishingDetails]="musicNew.publishingDetails"
         [contentBody]="musicNew.contentBody"
       >
-      </app-music-news>
-    </ng-container>
+      </app-news-card>
   </div>
 </section>
 
@@ -193,18 +194,21 @@
     <span class="entertainment-news-title-text">ENTRETENIMENTO</span>
   </h1>
   <section class="floating-options">
-    <a routerLink="/news" class="see-all">Ver todas</a>
+    <a routerLink="/news" class="see-all">Ver todas
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
   <div class="entertainment-news-list">
-    <ng-container *ngFor="let entertainmentNew of entertainmentNews">
-      <app-entertainment-news
+      <app-news-card *ngFor="let entertainmentNew of entertainmentNews"
+        [type]="'entertainment'"
         [thumbnailPath]="entertainmentNew.thumbnailPath"
         [title]="entertainmentNew.title"
         [publishingDetails]="entertainmentNew.publishingDetails"
         [contentBody]="entertainmentNew.contentBody"
       >
-      </app-entertainment-news>
-    </ng-container>
+      </app-news-card>
   </div>
 </section>
 
@@ -218,18 +222,21 @@
     <span class="lifestyle-news-title-text">LIFESTYLE</span>
   </h1>
   <section class="floating-options">
-    <a routerLink="/news" class="see-all">Ver todas</a>
+    <a routerLink="/news" class="see-all">Ver todas
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
   <div class="lifestyle-news-list">
-    <ng-container *ngFor="let lifestyleNew of lifestyleNews">
-      <app-lifestyle-news
+      <app-news-card *ngFor="let lifestyleNew of lifestyleNews"
+        [type]="'lifestyle'"
         [thumbnailPath]="lifestyleNew.thumbnailPath"
         [title]="lifestyleNew.title"
         [publishingDetails]="lifestyleNew.publishingDetails"
         [contentBody]="lifestyleNew.contentBody"
       >
-      </app-lifestyle-news>
-    </ng-container>
+      </app-news-card>
   </div>
 </section>
 
@@ -243,19 +250,22 @@
     <span class="marks-title-text">MARCAS</span>
   </h1>
   <section class="floating-options">
-    <a routerLink="/news" class="see-all">Ver todas</a>
+    <a routerLink="/news" class="see-all">Ver todas
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
 
   <div class="marks-flex-container">
     <div class="marks-list">
-      <app-marks-card
-        *ngFor="let marks of marks"
-        [type]="'opinion'"
+      <app-news-card *ngFor="let marks of marks"
+        [type]="'marks'"
         [thumbnailPath]="marks.thumbnailPath"
         [title]="marks.title"
         [publishingDetails]="marks.publishingDetails"
         [contentBody]="marks.contentBody"
-      ></app-marks-card>
+      ></app-news-card>
     </div>
     <div class="ads">
       <div class="ad-wrapper-1">
@@ -291,38 +301,17 @@
     <span class="opinion-title-text">OPINIÃO</span>
   </h1>
   <section class="floating-options">
-    <a routerLink="/news" class="see-all">Ver todas</a>
+    <a routerLink="/news" class="see-all">Ver todas
+      <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 2L6.5 7L1.5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+    </a>
   </section>
 
-  <div class="opinion-flex-container">
-    <div class="other-opinions-list">
-      <app-marks-card
-        *ngFor="let opinion of opinions"
-        [type]="'opinion'"
-        [thumbnailPath]="opinion.thumbnailPath"
-        [title]="opinion.title"
-        [publishingDetails]="opinion.publishingDetails"
-        [contentBody]="opinion.contentBody"
-      ></app-marks-card>
-    </div>
-    <div class="ads">
-      <div class="ad-wrapper-1">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-1"></div>
-      </div>
-      <div class="ad-wrapper-2">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-2"></div>
-      </div>
-      <div class="ad-wrapper-3">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-3"></div>
-      </div>
-    </div>
-  </div>
+  <app-carousel></app-carousel>
 </section>
 
-<app-carousel></app-carousel>
 
 <footer>
   <div class="footer-flex-container">
