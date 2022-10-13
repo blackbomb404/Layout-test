@@ -7,13 +7,13 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('carousel', { static: true })
+  @ViewChild('carousel')
   carousel!: ElementRef;
 
-  @ViewChild('slides', { static: true })
+  @ViewChild('slides')
   slides!: ElementRef;
 
-  @ViewChild('trackers', { static: true })
+  @ViewChild('trackers')
   trackers!: ElementRef;
 
   carouselNative!: HTMLElement;
@@ -28,7 +28,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   ngAfterViewInit(): void {
     this.carouselNative = this.carousel.nativeElement as HTMLElement;
@@ -36,56 +37,51 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.trackersNative = this.trackers.nativeElement as HTMLElement;
     this.slidesAmount = (this.slides.nativeElement as HTMLElement).childElementCount;
 
+
     const observer = new ResizeObserver(entries => {
       entries.forEach(entry => {
-          this.carouselCurrentWidth = entry.contentRect.width;
+        this.carouselCurrentWidth = entry.contentRect.width;
 
-          this.slidesNative.scrollTo({left: this.carouselCurrentWidth * this.currentItemIndex, behavior: 'auto'});
-      })
+        this.slidesNative.classList.add('no-transition');
+        this.moveToSlide((this.carouselCurrentWidth + 32) * this.currentItemIndex);
+        setTimeout(() => {
+            this.slidesNative.classList.remove('no-transition');
+        }, 50);
+    })
   });
   observer.observe(this.carouselNative);
   }
 
   previousSlide(){
     if(this.currentItemIndex > 0){
-
-      this.slidesNative.scrollTo({left: ((this.carouselCurrentWidth + 32) * this.currentItemIndex--) - (this.carouselCurrentWidth + 32), behavior: 'smooth'});
-      this.clearTrackers();
-      this.trackersNative.children[this.currentItemIndex].classList.add('active');
+      // slides.scrollTo({left: (carouselCurrentWidth * currentItemIndex--) - carouselCurrentWidth, behavior: 'smooth'});
+      this.moveToSlide(((this.carouselCurrentWidth + 32) * this.currentItemIndex--) - (this.carouselCurrentWidth + 32));
     }
   }
 
   nextSlide(){
     if(this.currentItemIndex + 1 < this.slidesNative.childElementCount){
-      this.slidesNative.scrollTo({left: (this.carouselCurrentWidth + 32) * ++this.currentItemIndex, behavior: 'smooth'});
-      this.clearTrackers();
-      this.trackersNative.children[this.currentItemIndex].classList.add('active');
+      // slides.scrollTo({left: carouselCurrentWidth * ++currentItemIndex, behavior: 'smooth'});
+      this.moveToSlide((this.carouselCurrentWidth + 32) * ++this.currentItemIndex);
     }
-  }
-
-  clearTrackers(){
-    const trackersArray = Array.from((this.trackers.nativeElement as HTMLElement).children);
-    for(const tracker of trackersArray){
-      tracker.classList.contains('active') && tracker.classList.remove('active');
-    }
-  }
-
-  arrayOfSize(size: number){
-    return new Array(size).fill(0);
   }
 
   trackersClick(event: Event){
     const target = event.target as HTMLElement;
     if(target.classList.contains('tracker') && !target.classList.contains('active')){
-        this.clearTrackers();
 
-        this.currentItemIndex = Array.from(this.trackersNative.children).indexOf(target);
-
-        this.slidesNative.scrollTo({left: (this.carouselCurrentWidth + 32) * this.currentItemIndex, behavior: 'smooth'});
-        this.trackersNative.children[this.currentItemIndex].classList.add('active');
-
-        target.classList.add('active');
+      this.currentItemIndex = Array.from(this.trackersNative.children).indexOf(target);
+      this.moveToSlide((this.carouselCurrentWidth + 32) * this.currentItemIndex);
     }
   }
 
+  private moveToSlide(amountToMove: number){
+    this.slidesNative.style.transform = `translateX(-${amountToMove}px)`;
+    this.trackersNative.querySelector('.active')?.classList.remove('active');
+    this.trackersNative.children[this.currentItemIndex]?.classList.add('active');
+  }
+
+  arrayOfSize(size: number){
+    return new Array(size).fill(0);
+  }
 }
