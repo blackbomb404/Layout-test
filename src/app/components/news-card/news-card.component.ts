@@ -11,7 +11,6 @@ export class NewsCardComponent implements OnInit {
   @Input() thumbnailPath: String = '';
   @Input() title: String = '';
   @Input() publishingDetails: IPublishingDetails = {
-    authorPhotoPath: '',
     authorName: '',
     since: '',
     views: 0,

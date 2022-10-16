@@ -258,7 +258,7 @@
   </section>
 
   <div class="marks-flex-container">
-    <div class="marks-list">
+    <div class="marks-column-1">
       <app-news-card *ngFor="let marks of marks"
         [type]="'marks'"
         [thumbnailPath]="marks.thumbnailPath"
@@ -267,19 +267,31 @@
         [contentBody]="marks.contentBody"
       ></app-news-card>
     </div>
-    <div class="ads">
-      <div class="ad-wrapper-1">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-1"></div>
+    <div class="marks-column-2">
+      <p class="ad-text">Publicidade</p>
+      <div class="ads">
+        <div class="ad">
+          <img src="assets/images/black-woman.png" alt="">
+        </div>
+        <div class="ad">
+          <img src="assets/images/guys-jumping.png" alt="">
+        </div>
+        <div class="ad">
+          <img src="assets/images/unknown-1.png" alt="">
+        </div>
       </div>
-      <div class="ad-wrapper-2">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-2"></div>
-      </div>
-      <div class="ad-wrapper-3">
-        <p class="ad-text">Publicidade</p>
-        <div class="ad-3"></div>
-      </div>
+      <app-news-card
+        [type]="'marks'"
+        thumbnailPath="assets/images/happy-woman.png"
+        title="Chery chega a Angola para dinamizar vendas do sector automóvel"
+        [publishingDetails]="{
+          authorName: '@mariano_fonseca',
+          since: ' - há 10 minutos',
+          views: 15,
+          comments: 15
+        }"
+        contentBody="Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada..."
+      ></app-news-card>
     </div>
   </div>
 </section>

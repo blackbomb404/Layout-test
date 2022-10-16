@@ -13,6 +13,8 @@ import { LifestyleSectionComponent } from './lifestyle-section/lifestyle-section
 import { MarksSectionComponent } from './marks-section/marks-section.component';
 import { OpinionSectionComponent } from './opinion-section/opinion-section.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

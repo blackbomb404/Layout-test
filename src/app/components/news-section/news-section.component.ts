@@ -60,6 +60,26 @@ export class NewsSectionComponent implements OnInit {
       title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
       since: 'há 10 minutos',
       imagePath: 'assets/images/top-new4.png'
+    },
+    {
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos',
+      imagePath: 'assets/images/top-new1.png'
+    },
+    {
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos',
+      imagePath: 'assets/images/blue-orange.png'
+    },
+    {
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos',
+      imagePath: 'assets/images/top-new3.png'
+    },
+    {
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos',
+      imagePath: 'assets/images/top-new4.png'
     }
   ]
 
@@ -68,7 +88,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/yellow-coat-guy.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -81,7 +100,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-bg.png',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -94,7 +112,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/painted-wall.png',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -107,7 +124,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/rainbow-dust.png',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -120,7 +136,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/orange-item.png',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -133,7 +148,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-lollipop.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -148,7 +162,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/yellow-coat-guy.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -161,7 +174,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-bg.png',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -174,7 +186,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/painted-wall.png',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -187,7 +198,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/rainbow-dust.png',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -200,7 +210,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/orange-item.png',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -213,7 +222,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-lollipop.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -229,7 +237,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/yellow-coat-guy.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -242,7 +249,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-bg.png',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -255,7 +261,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/painted-wall.png',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -268,7 +273,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/rainbow-dust.png',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -281,7 +285,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/orange-item.png',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -294,7 +297,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/pink-lollipop.png',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -310,7 +312,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/sexy-blonde-woman.png',
       title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -322,7 +323,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/jumping-on-road-guy.png',
       title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -334,7 +334,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/yellow-clothes-girl.png',
       title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         since: ' - há 10 minutos',
         views: 15,
@@ -349,7 +348,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/sexy-blonde-woman.png',
       title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         postDate: 'Agosto 18, 2022'
       },
@@ -359,7 +357,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/jumping-on-road-guy.png',
       title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         postDate: 'Agosto 18, 2022'
       },
@@ -369,7 +366,6 @@ export class NewsSectionComponent implements OnInit {
       thumbnailPath: 'assets/images/yellow-clothes-girl.png',
       title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
       publishingDetails: {
-        authorPhotoPath: 'assets/images/smilling-1.jpg',
         authorName: '@mariano_fonseca',
         postDate: 'Agosto 18, 2022'
       },

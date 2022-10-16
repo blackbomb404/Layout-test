@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   active: Boolean = false;
+  searchBarValue: String = '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggle(){
+    this.active = !this.active;
+    this.searchBarValue = '';
   }
 
   // openSearchBar(){

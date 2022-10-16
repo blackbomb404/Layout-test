@@ -34,8 +34,8 @@
 
       </a></li>
       <li class="flex" style="column-gap: 8px">
-        <input type="text" class="search-bar" placeholder="Pesquisar publicações" [class.active]="active">
-        <img class="search-loupe" [src]="'assets/icons/' + (active ? 'close.png' : 'search-loupe.png')" alt="" (click)="active = !active">
+        <input type="text" class="search-bar" placeholder="Pesquisar publicações" [class.active]="active" [(ngModel)]="searchBarValue">
+        <img class="search-loupe" [src]="'assets/icons/' + (active ? 'close.png' : 'search-loupe.png')" alt="" (click)="toggle()">
 
       </li>
     </ul>
