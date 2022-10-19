@@ -1,135 +1,20 @@
 <div class="carousel-wrapper">
   <article class="carousel" #carousel>
     <ul class="slides-container" #slides>
-        <li class="carousel-slide">
-          <div class="item">
-            <img class="thumbnail" src="assets/images/blue-orange.png" alt="">
-            <div class="text-wrapper">
-              <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-              <p class="since">há 10 minutos</p>
-            </div>
-          </div>
+        <li class="carousel-slide" *ngFor="let _ of getNumberOfSlidesAsArray(); index as i">
+          <ng-container *ngFor="let __ of getNumberOfItemsPerSlideAsArray(); index as j">
 
-          <div class="item">
-            <img class="thumbnail" src="assets/images/rainbow-wall.png" alt="">
-            <div class="text-wrapper">
-              <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-              <p class="since">há 10 minutos</p>
+            <div class="item" *ngIf="carouselData[i * numberOfItemsPerSlide + j] as value">
+              <img class="thumbnail" [src]="value.thumbnailPath" alt="">
+              <div class="text-wrapper">
+                <p class="title">{{value.title}}</p>
+                <p class="since">{{value.since}}</p>
+              </div>
             </div>
-          </div>
 
-          <div class="item">
-            <img class="thumbnail" src="assets/images/multiple-orange-like.png" alt="">
-            <div class="text-wrapper">
-              <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-              <p class="since">há 10 minutos</p>
-            </div>
-          </div>
+          </ng-container>
+
         </li>
-
-        <li class="carousel-slide">
-          <div class="item">
-            <img class="thumbnail" src="assets/images/blue-orange.png" alt="">
-            <div class="text-wrapper">
-              <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-              <p class="since">há 10 minutos</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img class="thumbnail" src="assets/images/rainbow-wall.png" alt="">
-            <div class="text-wrapper">
-              <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-              <p class="since">há 10 minutos</p>
-            </div>
-          </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/multiple-orange-like.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="carousel-slide">
-        <div class="item">
-          <img class="thumbnail" src="assets/images/blue-orange.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/rainbow-wall.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/multiple-orange-like.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="carousel-slide">
-        <div class="item">
-          <img class="thumbnail" src="assets/images/blue-orange.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/rainbow-wall.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/multiple-orange-like.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="carousel-slide">
-        <div class="item">
-          <img class="thumbnail" src="assets/images/blue-orange.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/rainbow-wall.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="thumbnail" src="assets/images/multiple-orange-like.png" alt="">
-          <div class="text-wrapper">
-            <p class="title">Paulo Alves em alta pela terceira vez no “Sunset of Dreams”</p>
-            <p class="since">há 10 minutos</p>
-          </div>
-        </div>
-      </li>
     </ul>
 
   </article>

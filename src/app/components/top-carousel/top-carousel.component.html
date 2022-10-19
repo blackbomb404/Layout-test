@@ -1,0 +1,58 @@
+<div class="carousel-wrapper">
+  <article class="carousel" #carousel>
+    <ul class="slides-container" #slides>
+        <li class="carousel-slide" *ngFor="let value of carouselData">
+
+          <article class="item news">
+            <img
+              class="news-thumbnail"
+              [src]="value.thumbnailPath"
+              alt="gilmario_vemba"
+            />
+            <div class="abs">
+              <h2 class="news-title">
+                {{value.title}}
+              </h2>
+              <div class="flex">
+                <div class="tag">#{{value.tag}}</div>
+
+                <app-publishing-details
+                  [authorName]="value.authorName"
+                  [since]="value.since"
+                  textColor="light"
+                ></app-publishing-details>
+              </div>
+
+              <button class="read-news green-button">
+                Ler notícia
+                <img class="export-icon" src="assets/icons/export.png" alt="" />
+              </button>
+            </div>
+
+            <div class="dark-overlay"></div>
+          </article>
+
+          </li>
+      </ul>
+
+  </article>
+  <button class="previous" (click)="previousSlide()">
+    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.75 2.5L2.25 10L9.75 17.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  </button>
+
+  <button class="next" (click)="nextSlide()">
+    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.25 2.5L9.75 10L2.25 17.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  </button>
+
+  <div class="slide-trackers" #trackers (click)="trackersClick($event)">
+      <div class="tracker" *ngFor="let slide of arrayOfSize(slidesAmount); index as i" [class.active]="currentItemIndex === i"></div>
+
+  </div>
+
+</div>

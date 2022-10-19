@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IMusicNews } from 'src/app/models/IMusicNews';
 import { INews } from 'src/app/models/INews';
+import { RadarApiService } from 'src/app/services/radar-api.service';
 
 @Component({
   selector: 'app-news-section',
@@ -12,32 +13,32 @@ export class NewsSectionComponent implements OnInit {
     {
       title: 'ANPG e parceiros do bloco 48 investem USD 1.4 milhões em projectos socias',
       author: 'Mariano Fonseca',
-      since: ' - há 10 minutos',
-      imagePath: 'assets/images/colored-roses.png'
+      since: 'há 10 minutos',
+      imagePath: 'assets/images/colored-roses.jpg'
     },
     {
       title: 'Em Agosto os filmes de acção são no canal Mundo FOX',
       author: 'Mariano Fonseca',
-      since: ' - há 40 minutos',
-      imagePath: 'assets/images/silver-house.png'
+      since: 'há 40 minutos',
+      imagePath: 'assets/images/silver-house.jpg'
     },
     {
       title: 'Fidelidade Angola lança o primeiro seguro automóvel 100% online',
       author: 'Mariano Fonseca',
-      since: ' - há 13 minutos',
-      imagePath: 'assets/images/rainbow-wall.png'
+      since: 'há 13 minutos',
+      imagePath: 'assets/images/rainbow-wall.jpg'
     },
     {
       title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
       author: 'Mariano Fonseca',
-      since: ' - há 17 horas',
-      imagePath: 'assets/images/white-car.png'
+      since: 'há 17 horas',
+      imagePath: 'assets/images/white-car.jpg'
     },
     {
       title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
       author: 'Mariano Fonseca',
-      since: ' - há 5 horas',
-      imagePath: 'assets/images/white-car.png'
+      since: 'há 5 horas',
+      imagePath: 'assets/images/white-car.jpg'
     }
   ]
   topNews: INews[] = [
@@ -85,11 +86,11 @@ export class NewsSectionComponent implements OnInit {
 
   musicNews: IMusicNews[] = [
     {
-      thumbnailPath: 'assets/images/yellow-coat-guy.png',
+      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -97,11 +98,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-bg.png',
+      thumbnailPath: 'assets/images/pink-bg.jpg',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -109,11 +110,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/painted-wall.png',
+      thumbnailPath: 'assets/images/painted-wall.jpg',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -121,11 +122,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/rainbow-dust.png',
+      thumbnailPath: 'assets/images/rainbow-dust.jpg',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -133,11 +134,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/orange-item.png',
+      thumbnailPath: 'assets/images/orange-item.jpg',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -145,11 +146,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-lollipop.png',
+      thumbnailPath: 'assets/images/pink-lollipop.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -159,11 +160,11 @@ export class NewsSectionComponent implements OnInit {
   ]
   entertainmentNews: IMusicNews[] = [
     {
-      thumbnailPath: 'assets/images/yellow-coat-guy.png',
+      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -171,11 +172,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-bg.png',
+      thumbnailPath: 'assets/images/pink-bg.jpg',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -183,11 +184,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/painted-wall.png',
+      thumbnailPath: 'assets/images/painted-wall.jpg',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -195,11 +196,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/rainbow-dust.png',
+      thumbnailPath: 'assets/images/rainbow-dust.jpg',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -207,11 +208,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/orange-item.png',
+      thumbnailPath: 'assets/images/orange-item.jpg',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -219,11 +220,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-lollipop.png',
+      thumbnailPath: 'assets/images/pink-lollipop.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -234,11 +235,11 @@ export class NewsSectionComponent implements OnInit {
 
   lifestyleNews: IMusicNews[] = [
     {
-      thumbnailPath: 'assets/images/yellow-coat-guy.png',
+      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -246,11 +247,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-bg.png',
+      thumbnailPath: 'assets/images/pink-bg.jpg',
       title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -258,11 +259,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/painted-wall.png',
+      thumbnailPath: 'assets/images/painted-wall.jpg',
       title: '7º aniversário do Centrooptico dá centenas de prémios diários',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -270,11 +271,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/rainbow-dust.png',
+      thumbnailPath: 'assets/images/rainbow-dust.jpg',
       title: 'Selecionamos as notícias com maiores destaques para você',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -282,11 +283,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/orange-item.png',
+      thumbnailPath: 'assets/images/orange-item.jpg',
       title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -294,11 +295,11 @@ export class NewsSectionComponent implements OnInit {
         'diferenciado e motores de última geração. A gama SUV, representada...'
     },
     {
-      thumbnailPath: 'assets/images/pink-lollipop.png',
+      thumbnailPath: 'assets/images/pink-lollipop.jpg',
       title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -313,7 +314,7 @@ export class NewsSectionComponent implements OnInit {
       title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -324,7 +325,7 @@ export class NewsSectionComponent implements OnInit {
       title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -335,7 +336,7 @@ export class NewsSectionComponent implements OnInit {
       title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
       publishingDetails: {
         authorName: '@mariano_fonseca',
-        since: ' - há 10 minutos',
+        since: 'há 10 minutos',
         views: 15,
         comments: 15
       },
@@ -343,39 +344,45 @@ export class NewsSectionComponent implements OnInit {
     }
   ]
 
-  opinions: IMusicNews[] = [
-    {
-      thumbnailPath: 'assets/images/sexy-blonde-woman.png',
-      title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/jumping-on-road-guy.png',
-      title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/yellow-clothes-girl.png',
-      title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        postDate: 'Agosto 18, 2022'
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    }
-  ]
+  // opinions: IMusicNews[] = [
+  //   {
+  //     thumbnailPath: 'assets/images/sexy-blonde-woman.png',
+  //     title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
+  //     publishingDetails: {
+  //       authorName: '@mariano_fonseca',
+  //       postDate: 'Agosto 18, 2022'
+  //     },
+  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+  //   },
+  //   {
+  //     thumbnailPath: 'assets/images/jumping-on-road-guy.png',
+  //     title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
+  //     publishingDetails: {
+  //       authorName: '@mariano_fonseca',
+  //       postDate: 'Agosto 18, 2022'
+  //     },
+  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+  //   },
+  //   {
+  //     thumbnailPath: 'assets/images/yellow-clothes-girl.png',
+  //     title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
+  //     publishingDetails: {
+  //       authorName: '@mariano_fonseca',
+  //       postDate: 'Agosto 18, 2022'
+  //     },
+  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
+  //   }
+  // ]
 
-  constructor() { }
+  constructor(private api: RadarApiService) { }
 
   ngOnInit(): void {
+    this.api.fetchMusicNews('https://localhost:7074/api/news/music')
+    .subscribe((data: IMusicNews[]) => {
+
+      // alert('YOO')
+      // this.musicNews = data;
+    });
   }
 
 }

@@ -14,6 +14,8 @@ import { MarksSectionComponent } from './marks-section/marks-section.component';
 import { OpinionSectionComponent } from './opinion-section/opinion-section.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
+import { TopCarouselComponent } from './components/top-carousel/top-carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,12 +30,14 @@ import { FormsModule } from '@angular/forms';
     LifestyleSectionComponent,
     MarksSectionComponent,
     OpinionSectionComponent,
-    CarouselComponent
+    CarouselComponent,
+    TopCarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,71 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
+  numberOfItemsPerSlide: number = 3;
+  carouselData = [{
+      thumbnailPath: 'assets/images/blue-orange.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/rainbow-wall.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/multiple-orange-like.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/blue-orange.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/rainbow-wall.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/multiple-orange-like.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/blue-orange.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/rainbow-wall.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/multiple-orange-like.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },
+    {
+      thumbnailPath: 'assets/images/blue-orange.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/rainbow-wall.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/multiple-orange-like.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },
+    {
+      thumbnailPath: 'assets/images/blue-orange.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/rainbow-wall.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },{
+      thumbnailPath: 'assets/images/multiple-orange-like.jpg',
+      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
+      since: 'há 10 minutos'
+    },
+  ]
 
   @ViewChild('carousel')
   carousel!: ElementRef;
@@ -81,7 +146,16 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.trackersNative.children[this.currentItemIndex]?.classList.add('active');
   }
 
-  arrayOfSize(size: number){
+  arrayOfSize(size: number) : Array<number> {
     return new Array(size).fill(0);
+  }
+
+  getNumberOfSlidesAsArray() : Array <number> {
+    const amountOfSlides: number = Math.ceil(this.carouselData.length / this.numberOfItemsPerSlide)
+    return this.arrayOfSize(amountOfSlides);
+  }
+
+  getNumberOfItemsPerSlideAsArray(){
+    return this.arrayOfSize(this.numberOfItemsPerSlide);
   }
 }

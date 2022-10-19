@@ -35,7 +35,14 @@
       </a></li>
       <li class="flex" style="column-gap: 8px">
         <input type="text" class="search-bar" placeholder="Pesquisar publicações" [class.active]="active" [(ngModel)]="searchBarValue">
-        <img class="search-loupe" [src]="'assets/icons/' + (active ? 'close.png' : 'search-loupe.png')" alt="" (click)="toggle()">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" *ngIf="!active" (click)="toggle()">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89062 0.901917C4.98047 0.901917 1 4.86543 1 9.75467C1 14.6439 4.98047 18.6074 9.89062 18.6074C11.9688 18.6074 13.8805 17.8974 15.3943 16.7077L19.2145 20.5116C19.6229 20.9183 20.2852 20.9183 20.6937 20.5116C21.1021 20.1049 21.1021 19.4454 20.6937 19.0387L16.8735 15.2348C18.0682 13.7275 18.7812 11.8239 18.7812 9.75467C18.7812 4.86543 14.8008 0.901917 9.89062 0.901917ZM3.09191 9.75467C3.09191 6.01584 6.1358 2.98492 9.89062 2.98492C13.6455 2.98492 16.6893 6.01584 16.6893 9.75467C16.6893 13.4935 13.6455 16.5244 9.89062 16.5244C6.1358 16.5244 3.09191 13.4935 3.09191 9.75467Z" fill="#010408" stroke="#010408"/>
+        </svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" *ngIf="active" (click)="toggle()">
+          <path d="M13 1L1 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 1L13 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
 
       </li>
     </ul>

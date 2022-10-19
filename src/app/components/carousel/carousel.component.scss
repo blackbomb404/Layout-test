@@ -65,7 +65,7 @@
 }
 .slide-trackers {
   display: flex;
-  column-gap: 16px;
+  column-gap: 8px;
   position: absolute;
   bottom: -5rem;
   left: 50%;
@@ -79,7 +79,6 @@
     border-radius: 50rem;
     cursor: pointer;
     background-color: #d9d9d9;
-
   }
 
 }
