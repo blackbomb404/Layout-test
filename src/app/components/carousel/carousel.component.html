@@ -8,7 +8,7 @@
               <img class="thumbnail" [src]="value.thumbnailPath" alt="">
               <div class="text-wrapper">
                 <p class="title">{{value.title}}</p>
-                <p class="since">{{value.since}}</p>
+                <p class="since">há {{value.postedAt.toString() | daysFromNow}} dias</p>
               </div>
             </div>
 
@@ -31,8 +31,7 @@
 
   </button>
   <div class="slide-trackers" #trackers (click)="trackersClick($event)">
-      <div class="tracker" *ngFor="let slide of arrayOfSize(slidesAmount); index as i" [class.active]="currentItemIndex === i"></div>
-
+    <div class="tracker" *ngFor="let slide of getNumberOfSlidesAsArray(); index as i" [class.active]="currentItemIndex === i"></div>
   </div>
 
 </div>

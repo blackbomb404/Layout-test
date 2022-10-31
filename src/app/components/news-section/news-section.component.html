@@ -1,7 +1,6 @@
 <div class="news-wrapper">
-  <app-top-carousel>
+  <app-top-carousel [carouselData]="topCarousel"></app-top-carousel>
 
-  </app-top-carousel>
   <div class="slider" style="display: none">
     <article class="news">
       <img
@@ -36,18 +35,18 @@
   </div>
 
   <section class="more-news">
-    <ng-container *ngFor="let singleNews of news; last as lastItem">
+    <ng-container *ngFor="let singleNews of sideNews; last as lastItem">
       <div class="single-news">
         <img
           class="single-news-thumbnail"
-          [src]="singleNews.imagePath"
+          [src]="singleNews.thumbnailPath"
           alt=""
         />
         <div class="single-news-text">
           <h5 class="single-news-title">{{ singleNews.title }}</h5>
           <app-publishing-details
             authorName="Mariano Fonseca"
-            [since]="singleNews.since"
+            [postedAt]="singleNews.postedAt"
           ></app-publishing-details>
         </div>
       </div>
@@ -73,12 +72,12 @@
 
   <section class="top-news-slideshow">
     <article *ngFor="let topNew of topNews" class="top-new">
-      <img class="top-new-thumbnail" [src]="topNew.imagePath" />
+      <img class="top-new-thumbnail" [src]="topNew.thumbnailPath" />
       <div class="top-new-details">
         <div class="top-new-title">{{ topNew.title }}</div>
 
         <div class="top-new-postDate">
-          <span>{{ topNew.since }}</span>
+          <span>há {{ topNew.postedAt.toString() | daysFromNow }} dias</span>
         </div>
       </div>
     </article>
@@ -178,10 +177,14 @@
   </section>
   <div class="music-news-list">
       <app-news-card *ngFor="let musicNew of musicNews"
-        [thumbnailPath]="musicNew.thumbnailPath"
         [title]="musicNew.title"
-        [publishingDetails]="musicNew.publishingDetails"
-        [contentBody]="musicNew.contentBody"
+        [content]="musicNew.content"
+        [type]="musicNew.type"
+        [thumbnailPath]="musicNew.thumbnailPath"
+        [views]="musicNew.views"
+        [comments]="musicNew.comments"
+        [authorName]="musicNew.authorName"
+        [postedAt]="musicNew.postedAt"
       >
       </app-news-card>
   </div>
@@ -205,11 +208,14 @@
   </section>
   <div class="entertainment-news-list">
       <app-news-card *ngFor="let entertainmentNew of entertainmentNews"
-        [type]="'entertainment'"
-        [thumbnailPath]="entertainmentNew.thumbnailPath"
-        [title]="entertainmentNew.title"
-        [publishingDetails]="entertainmentNew.publishingDetails"
-        [contentBody]="entertainmentNew.contentBody"
+      [title]="entertainmentNew.title"
+      [content]="entertainmentNew.content"
+      [type]="entertainmentNew.type"
+      [thumbnailPath]="entertainmentNew.thumbnailPath"
+      [views]="entertainmentNew.views"
+      [comments]="entertainmentNew.comments"
+      [authorName]="entertainmentNew.authorName"
+      [postedAt]="entertainmentNew.postedAt"
       >
       </app-news-card>
   </div>
@@ -233,11 +239,14 @@
   </section>
   <div class="lifestyle-news-list">
       <app-news-card *ngFor="let lifestyleNew of lifestyleNews"
-        [type]="'lifestyle'"
-        [thumbnailPath]="lifestyleNew.thumbnailPath"
-        [title]="lifestyleNew.title"
-        [publishingDetails]="lifestyleNew.publishingDetails"
-        [contentBody]="lifestyleNew.contentBody"
+      [title]="lifestyleNew.title"
+      [content]="lifestyleNew.content"
+      [type]="lifestyleNew.type"
+      [thumbnailPath]="lifestyleNew.thumbnailPath"
+      [views]="lifestyleNew.views"
+      [comments]="lifestyleNew.comments"
+      [authorName]="lifestyleNew.authorName"
+      [postedAt]="lifestyleNew.postedAt"
       >
       </app-news-card>
   </div>
@@ -262,12 +271,15 @@
 
   <div class="marks-flex-container">
     <div class="marks-column-1">
-      <app-news-card *ngFor="let marks of marks"
-        [type]="'marks'"
-        [thumbnailPath]="marks.thumbnailPath"
-        [title]="marks.title"
-        [publishingDetails]="marks.publishingDetails"
-        [contentBody]="marks.contentBody"
+      <app-news-card *ngFor="let mark of marks"
+      [title]="mark.title"
+      [content]="mark.content"
+      [type]="mark.type"
+      [thumbnailPath]="mark.thumbnailPath"
+      [views]="mark.views"
+      [comments]="mark.comments"
+      [authorName]="mark.authorName"
+      [postedAt]="mark.postedAt"
       ></app-news-card>
     </div>
     <div class="marks-column-2">
@@ -284,16 +296,13 @@
         </div>
       </div>
       <app-news-card
-        [type]="'marks'"
-        thumbnailPath="assets/images/happy-woman.png"
-        title="Chery chega a Angola para dinamizar vendas do sector automóvel"
-        [publishingDetails]="{
-          authorName: '@mariano_fonseca',
-          since: ' - há 10 minutos',
-          views: 15,
-          comments: 15
-        }"
-        contentBody="Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada..."
+        [title]="'Chery chega a Angola para dinamizar vendas do sector automóvel'"
+        [content]="'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'"
+        [type]="'Mark'"
+        [thumbnailPath]="'assets/images/happy-woman.png'"
+        [views]="15"
+        [comments]="15"
+        authorName="Mariano Fonseca"
       ></app-news-card>
     </div>
   </div>
@@ -324,7 +333,7 @@
     </a>
   </section>
 
-  <app-carousel></app-carousel>
+  <app-carousel [carouselData]="opinions"></app-carousel>
 </section>
 
 

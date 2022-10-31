@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IMusicNews } from 'src/app/models/IMusicNews';
-import { INews } from 'src/app/models/INews';
+import { INewsCard } from 'src/app/models/INewsCard';
+import { ISideNews } from 'src/app/models/ISideNews';
+import { ITopNews } from 'src/app/models/ITopNews';
 import { RadarApiService } from 'src/app/services/radar-api.service';
 
 @Component({
@@ -9,380 +10,95 @@ import { RadarApiService } from 'src/app/services/radar-api.service';
   styleUrls: ['./news-section.component.scss']
 })
 export class NewsSectionComponent implements OnInit {
-  news: INews[] = [
-    {
-      title: 'ANPG e parceiros do bloco 48 investem USD 1.4 milhões em projectos socias',
-      author: 'Mariano Fonseca',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/colored-roses.jpg'
-    },
-    {
-      title: 'Em Agosto os filmes de acção são no canal Mundo FOX',
-      author: 'Mariano Fonseca',
-      since: 'há 40 minutos',
-      imagePath: 'assets/images/silver-house.jpg'
-    },
-    {
-      title: 'Fidelidade Angola lança o primeiro seguro automóvel 100% online',
-      author: 'Mariano Fonseca',
-      since: 'há 13 minutos',
-      imagePath: 'assets/images/rainbow-wall.jpg'
-    },
-    {
-      title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
-      author: 'Mariano Fonseca',
-      since: 'há 17 horas',
-      imagePath: 'assets/images/white-car.jpg'
-    },
-    {
-      title: 'Caetano promove 1ª Feira Automóvel nas Galerias Patriota',
-      author: 'Mariano Fonseca',
-      since: 'há 5 horas',
-      imagePath: 'assets/images/white-car.jpg'
-    }
-  ]
-  topNews: INews[] = [
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new1.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/blue-orange.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new3.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new4.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new1.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/blue-orange.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new3.png'
-    },
-    {
-      title: 'Paulo Alves em alta pela terceira vez no “Sunset of Dreams”',
-      since: 'há 10 minutos',
-      imagePath: 'assets/images/top-new4.png'
-    }
-  ]
-
-  musicNews: IMusicNews[] = [
-    {
-      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-bg.jpg',
-      title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/painted-wall.jpg',
-      title: '7º aniversário do Centrooptico dá centenas de prémios diários',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/rainbow-dust.jpg',
-      title: 'Selecionamos as notícias com maiores destaques para você',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/orange-item.jpg',
-      title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-lollipop.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    }
-  ]
-  entertainmentNews: IMusicNews[] = [
-    {
-      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-bg.jpg',
-      title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/painted-wall.jpg',
-      title: '7º aniversário do Centrooptico dá centenas de prémios diários',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/rainbow-dust.jpg',
-      title: 'Selecionamos as notícias com maiores destaques para você',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/orange-item.jpg',
-      title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-lollipop.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    }
-  ]
-
-  lifestyleNews: IMusicNews[] = [
-    {
-      thumbnailPath: 'assets/images/yellow-coat-guy.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-bg.jpg',
-      title: 'Gemidos de Três Mulheres: Após sucesso na estreia em Luanda Light Life leva peça...',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/painted-wall.jpg',
-      title: '7º aniversário do Centrooptico dá centenas de prémios diários',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/rainbow-dust.jpg',
-      title: 'Selecionamos as notícias com maiores destaques para você',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/orange-item.jpg',
-      title: 'Talento de Jessé Manuel encanta Embaixador de Portugal em Angola',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/pink-lollipop.jpg',
-      title: 'Chery chega a Angola para dinamizar vendas do sector automóvel',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design' +
-        'diferenciado e motores de última geração. A gama SUV, representada...'
-    }
-  ]
-
-  marks: IMusicNews[] = [
-    {
-      thumbnailPath: 'assets/images/sexy-blonde-woman.png',
-      title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/jumping-on-road-guy.png',
-      title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    },
-    {
-      thumbnailPath: 'assets/images/yellow-clothes-girl.png',
-      title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
-      publishingDetails: {
-        authorName: '@mariano_fonseca',
-        since: 'há 10 minutos',
-        views: 15,
-        comments: 15
-      },
-      contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-    }
-  ]
-
-  // opinions: IMusicNews[] = [
-  //   {
-  //     thumbnailPath: 'assets/images/sexy-blonde-woman.png',
-  //     title: 'União Europeia e CFK unem esforços para promover o empreendedorismo em Angola',
-  //     publishingDetails: {
-  //       authorName: '@mariano_fonseca',
-  //       postDate: 'Agosto 18, 2022'
-  //     },
-  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-  //   },
-  //   {
-  //     thumbnailPath: 'assets/images/jumping-on-road-guy.png',
-  //     title: 'Depois da notoriedade na série “Bridgerton”, Regé-Jean Page é um dos atores mais cobiçados...',
-  //     publishingDetails: {
-  //       authorName: '@mariano_fonseca',
-  //       postDate: 'Agosto 18, 2022'
-  //     },
-  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-  //   },
-  //   {
-  //     thumbnailPath: 'assets/images/yellow-clothes-girl.png',
-  //     title: 'Preto Show anima noite de Hip Hop e House Music no SSB',
-  //     publishingDetails: {
-  //       authorName: '@mariano_fonseca',
-  //       postDate: 'Agosto 18, 2022'
-  //     },
-  //     contentBody: 'Modernos e com nova propulsão, os “Chery Tiggo Pro” apresentam um design diferenciado e motores de última geração. A gama SUV, representada...'
-  //   }
-  // ]
+  topCarousel: INewsCard[] = [];
+  sideNews: ISideNews[] = [];
+  topNews: ITopNews[] = [];
+  musicNews: INewsCard[] = [];
+  entertainmentNews: INewsCard[] = [];
+  lifestyleNews: INewsCard[] = [];
+  marks: INewsCard[] =[];
+  opinions: ITopNews[] = [];
 
   constructor(private api: RadarApiService) { }
 
   ngOnInit(): void {
-    this.api.fetchMusicNews('https://localhost:7074/api/news/music')
-    .subscribe((data: IMusicNews[]) => {
+    this.api.fetchTopCarousel('https://localhost:7074/api/news/topcarousel')
+    .subscribe({
+      next: (data: INewsCard[]) => {
 
-      // alert('YOO')
-      // this.musicNews = data;
+        this.topCarousel = data;
+        console.log(data);
+      }
+    })
+
+    this.api.fetchSideNews('https://localhost:7074/api/sidenews')
+    .subscribe({
+      next: (data: ISideNews[]) => {
+
+        this.sideNews = data;
+      }
+    })
+
+    this.api.fetchTopNews('https://localhost:7074/api/news/topnews')
+    .subscribe({
+      next: (data: ITopNews[]) => {
+
+        this.topNews = data;
+      },
+      error: errorHandler
+    })
+
+    this.api.fetchMusicNews('https://localhost:7074/api/news/music')
+    .subscribe({
+      next: (data: INewsCard[]) => {
+
+        this.musicNews = data;
+      },
+      error: errorHandler
     });
+
+    this.api.fetchEntertainmentNews('https://localhost:7074/api/news/entertainment')
+    .subscribe({
+      next: (data: INewsCard[]) => {
+
+        this.entertainmentNews = data;
+      },
+      error: errorHandler
+    });
+
+    this.api.fetchLifestyleNews('https://localhost:7074/api/news/lifestyle')
+    .subscribe({
+      next: (data: INewsCard[]) => {
+
+        this.lifestyleNews = data;
+      },
+      error: errorHandler
+    });
+
+    this.api.fetchMarkNews('https://localhost:7074/api/news/mark')
+    .subscribe({
+      next: (data: INewsCard[]) => {
+
+        this.marks = data;
+      },
+      error: errorHandler
+    });
+
+    this.api.fetchOpinionNews('https://localhost:7074/api/news/opinion')
+    .subscribe({
+      next: (data: ITopNews[]) => {
+
+        this.opinions = data;
+      },
+      error: errorHandler
+    })
+
+
+    function errorHandler(err: any){
+      console.error('Something went wrong...\n' + err);
+    }
   }
+
+
 
 }

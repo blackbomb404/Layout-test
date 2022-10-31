@@ -1,36 +1,43 @@
 @use '/src/assets/styles/colors' as c;
 
-.music-new {
+.news {
   display: flex;
   column-gap: 24px;
   // width: 80%;
 
-  .music-new-thumbnail {
-    width: 187px;
-    height: 151px;
-    // height: auto;
-    object-fit: cover;
-    object-position: center;
+  div:has(> .news-thumbnail) {
+    width: 512px;
+    height: 170px;
+    overflow: hidden;
     border-radius: 4px;
   }
 
-  .music-new-content {
+  .news-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+
+  .news-content {
     display: flex;
     flex-direction: column;
     row-gap: 16px;
     color: rgba(0, 0, 0, .6);
 
-    .music-new-content-title {
+    .news-content-title {
       font-weight: 600;
       // margin-bottom: 16px;
 
       a {
         color: #010408;
         text-decoration: none;
-
-        // &:hover {
-        //   color: c.$music-color;
-        // }
       }
 
       .type-music:hover {

@@ -1,26 +1,28 @@
-<article class="music-new">
-  <img
-    [src]="thumbnailPath"
-    alt=""
-    class="music-new-thumbnail"
-  />
-  <div class="music-new-content">
-    <h4 class="music-new-content-title">
+<article class="news">
+  <div>
+    <img
+      [src]="thumbnailPath"
+      alt=""
+      class="news-thumbnail"
+    />
+  </div>
+  <div class="news-content">
+    <h4 class="news-content-title">
       <a routerLink="/news"
-      [class.type-music]="type === 'music'"
-      [class.type-entertainment]="type === 'entertainment'"
-      [class.type-lifestyle]="type === 'lifestyle'"
-      [class.type-marks]="type === 'marks'"
+      [class.type-music]="type === 'Music'"
+      [class.type-entertainment]="type === 'Entertainment'"
+      [class.type-lifestyle]="type === 'Lifestyle'"
+      [class.type-marks]="type === 'Mark'"
       >{{title}}</a>
     </h4>
     <app-publishing-details
-        [authorName]="publishingDetails.authorName"
-        [since]="publishingDetails.since"
-        [views]="publishingDetails.views"
-        [comments]="publishingDetails.comments">
+        [authorName]="authorName"
+        [postedAt]="postedAt"
+        [views]="views"
+        [comments]="comments">
     </app-publishing-details>
     <p class="content-body">
-      {{contentBody}}
+      {{content}}
     </p>
   </div>
 </article>

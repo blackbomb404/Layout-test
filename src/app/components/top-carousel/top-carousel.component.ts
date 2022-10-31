@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ChangeDetectorRef, Input } from '@angular/core';
+import { INewsCard } from 'src/app/models/INewsCard';
 
 @Component({
   selector: 'app-top-carousel',
@@ -7,21 +8,24 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class TopCarouselComponent implements OnInit {
 
-  numberOfItemsPerSlide: number = 3;
-  carouselData = [{
-      thumbnailPath: 'assets/images/gilmario.jpg',
-      title: 'Popularidade de Gilmário dispara em Portugal: Artista angolano chega ao FOX Comedy',
-      authorName: '@mariano_fonseca',
-      since: 'há 10 minutos',
-      tag: 'entretenimento'
-    },{
-      thumbnailPath: 'assets/images/gilmario.jpg',
-      title: 'Popularidade de Gilmário dispara em Portugal: Artista angolano chega ao FOX Comedy',
-      authorName: '@mariano_fonseca',
-      since: 'há 10 minutos',
-      tag: 'entretenimento'
-    }
-  ]
+  numberOfItemsPerSlide: number = 1;
+  // carouselData = [{
+  //     thumbnailPath: 'assets/images/gilmario.jpg',
+  //     title: 'Popularidade de Gilmário dispara em Portugal: Artista angolano chega ao FOX Comedy',
+  //     authorName: '@mariano_fonseca',
+  //     // since: 'há 10 minutos',
+  //     postedAt: new Date(),
+  //     tag: 'entretenimento'
+  //   },{
+  //     thumbnailPath: 'assets/images/gilmario.jpg',
+  //     title: 'Popularidade de Gilmário dispara em Portugal: Artista angolano chega ao FOX Comedy',
+  //     authorName: '@mariano_fonseca',
+  //     // since: 'há 10 minutos',
+  //     postedAt: new Date(),
+  //     tag: 'entretenimento'
+  //   }
+  // ]
+  @Input() carouselData: INewsCard[] = [];
 
   @ViewChild('carousel')
   carousel!: ElementRef;
@@ -42,7 +46,7 @@ export class TopCarouselComponent implements OnInit {
   currentItemIndex: number = 0;
   carouselCurrentWidth!: number;
 
-  constructor() { }
+  constructor(private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -53,6 +57,7 @@ export class TopCarouselComponent implements OnInit {
     this.trackersNative = this.trackers.nativeElement as HTMLElement;
     this.slidesAmount = (this.slides.nativeElement as HTMLElement).childElementCount;
 
+    this.changeDetector.detectChanges();
 
     const observer = new ResizeObserver(entries => {
       entries.forEach(entry => {
@@ -97,8 +102,8 @@ export class TopCarouselComponent implements OnInit {
     this.trackersNative.children[this.currentItemIndex]?.classList.add('active');
   }
 
-  arrayOfSize(size: number) : Array<number> {
-    return new Array(size).fill(0);
+  private arrayOfSize(size: number) : Array<number> {
+    return [...Array(size).keys()];
   }
 
   getNumberOfSlidesAsArray() : Array <number> {

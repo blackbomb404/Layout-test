@@ -14,11 +14,11 @@
                 {{value.title}}
               </h2>
               <div class="flex">
-                <div class="tag">#{{value.tag}}</div>
+                <div class="tag">#{{value.type}}</div>
 
                 <app-publishing-details
                   [authorName]="value.authorName"
-                  [since]="value.since"
+                  [postedAt]="value.postedAt"
                   textColor="light"
                 ></app-publishing-details>
               </div>
@@ -51,7 +51,7 @@
   </button>
 
   <div class="slide-trackers" #trackers (click)="trackersClick($event)">
-      <div class="tracker" *ngFor="let slide of arrayOfSize(slidesAmount); index as i" [class.active]="currentItemIndex === i"></div>
+      <div class="tracker" *ngFor="let slide of getNumberOfSlidesAsArray(); index as i" [class.active]="currentItemIndex === i"></div>
 
   </div>
 

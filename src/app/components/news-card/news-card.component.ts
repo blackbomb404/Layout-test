@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPublishingDetails } from 'src/app/models/IPublishingDetails';
 
 @Component({
   selector: 'app-news-card',
@@ -7,20 +6,19 @@ import { IPublishingDetails } from 'src/app/models/IPublishingDetails';
   styleUrls: ['./news-card.component.scss']
 })
 export class NewsCardComponent implements OnInit {
-  @Input() type : 'music' | 'entertainment' | 'lifestyle' | 'marks' | 'opinion' = 'music';
-  @Input() thumbnailPath: String = '';
   @Input() title: String = '';
-  @Input() publishingDetails: IPublishingDetails = {
-    authorName: '',
-    since: '',
-    views: 0,
-    comments: 0
-  };
-  @Input() contentBody: String = '';
+  @Input() content: String = '';
+  @Input() type : 'Music' | 'Entertainment' | 'Lifestyle' | 'Mark' | 'Opinion' = 'Music';
+  @Input() thumbnailPath: String = '';
+  @Input() authorName: String = '';
+  @Input() postedAt: Date = new Date();
+  @Input() views: Number = 0;
+  @Input() comments: Number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

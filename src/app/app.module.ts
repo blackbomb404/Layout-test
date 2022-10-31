@@ -16,6 +16,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { TopCarouselComponent } from './components/top-carousel/top-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DaysFromNowPipe } from './pipes/days-from-now.pipe';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MarksSectionComponent,
     OpinionSectionComponent,
     CarouselComponent,
-    TopCarouselComponent
+    TopCarouselComponent,
+    DaysFromNowPipe
   ],
   imports: [
     BrowserModule,

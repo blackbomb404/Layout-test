@@ -7,14 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PublishingDetailsComponent implements OnInit {
   @Input() authorName: String = '';
-  @Input() since?: String = '';
+  @Input() postedAt: Date = new Date();
+  @Input() views?: Number;
+  @Input() comments?: Number;
   @Input() textColor: 'light' | 'dark' = 'dark';
-  @Input() views?: Number = 0;;
-  @Input() comments?: Number = 0;
 
-  @Input() showViewsAndComments: Boolean = false;
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
